@@ -4,7 +4,7 @@
  */
 
 
-const eddystone = require("../../lib/eddystone.js");
+const service = require("../../lib/eddystone.js");
 const assert = require ('assert');
 
 
@@ -39,30 +39,30 @@ describe('eddystone', function() {
 
   // Test the process function with no input data
   it('should handle no input data', function() {
-    assert.deepEqual(eddystone.process(), EXPECTED_DATA_INVALID_INPUT);
+    assert.deepEqual(service.process(), EXPECTED_DATA_INVALID_INPUT);
   });
 
   // Test the process function with invalid data
   it('should handle a invalid data as input', function() {
-    assert.deepEqual(eddystone.process(INPUT_DATA_INVALID_INPUT),
+    assert.deepEqual(service.process(INPUT_DATA_INVALID_INPUT),
                      EXPECTED_DATA_INVALID_INPUT);
   });
 
   // Test the process function with valid Eddystone UID data
   it('should handle valid Eddystone-UID data as input', function() {
-    assert.deepEqual(eddystone.process(INPUT_DATA_EDDYSTONE_UID),
+    assert.deepEqual(service.process(INPUT_DATA_EDDYSTONE_UID),
                      EXPECTED_DATA_EDDYSTONE_UID);
   });
 
   // Test the process function with valid Eddystone URL data
   it('should handle valid Eddystone-URL data as input', function() {
-    assert.deepEqual(eddystone.process(INPUT_DATA_EDDYSTONE_URL),
+    assert.deepEqual(service.process(INPUT_DATA_EDDYSTONE_URL),
                      EXPECTED_DATA_EDDYSTONE_URL);
   });
 
   // Test the process function with valid Eddystone TLM data
   it('should handle valid Eddystone-TLM data as input', function() {
-    assert.deepEqual(eddystone.process(INPUT_DATA_EDDYSTONE_TLM),
+    assert.deepEqual(service.process(INPUT_DATA_EDDYSTONE_TLM),
                      EXPECTED_DATA_EDDYSTONE_TLM);
   });
 
