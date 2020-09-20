@@ -1,0 +1,38 @@
+{
+  "name": "advlib-ble-services",
+  "homepage": "https://github.com/reelyactive/advlib-ble-services/",
+  "author": {
+    "name": "reelyActive",
+    "email": "info@reelyactive.com"
+  },
+  "description": "Wireless advertising packet decoding library for Bluetooth Low Energy service data.  We believe in an open Internet of Things.",
+  "keywords": [
+    "reelyActive",
+    "advlib",
+    "Bluetooth Low Energy",
+    "BLE",
+    "payload processor",
+    "library"
+  ],
+  "version": "1.0.0",
+  "engines": {
+    "node": ">=6.0.0"
+  },
+  "main": "./lib/advlibbleservices.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/reelyactive/advlib-ble-services.git"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "mocha": "^6.0.0"
+  },
+  "bugs": {
+    "url": "https://github.com/reelyactive/advlib-ble-services/issues"
+  },
+  "contributors": [
+    { "name": "Jeffrey Dungen" }
+  ],
+  "license": "MIT"
+}
