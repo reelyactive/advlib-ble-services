@@ -21,7 +21,7 @@ const EXPECTED_DATA_INVALID_INPUT = null;
 const EXPECTED_DATA_TEMPERATURE_HUMIDITY = {
     batteryPercentage: 99,
     temperature: 21.5,
-    humidity: 50.0
+    relativeHumidity: 50.0
 };
 const EXPECTED_DATA_VISIBLE_LIGHT = {
     batteryPercentage: 69,
