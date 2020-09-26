@@ -4,7 +4,7 @@
  */
 
 
-const advlib = require("../../lib/advlibbleservices.js");
+const advlib = require('../../lib/advlibbleservices.js');
 const assert = require ('assert');
 
 
@@ -20,8 +20,7 @@ const INPUT_DATA_EDDYSTONE_UID = '00fc00112233445566778899aabbccddeeff0000';
 const EXPECTED_DATA_INVALID_INPUT = null;
 const EXPECTED_DATA_EDDYSTONE_UID = {
     txPower: -4,
-    namespace: '00112233445566778899',
-    instance: 'aabbccddeeff'
+    deviceIds: [ "00112233445566778899/aabbccddeeff" ]
 }
 
 

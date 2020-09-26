@@ -4,7 +4,7 @@
  */
 
 
-const service = require("../../lib/eddystone.js");
+const service = require('../../lib/eddystone.js');
 const assert = require ('assert');
 
 
@@ -19,17 +19,16 @@ const INPUT_DATA_EDDYSTONE_TLM = '20000bb815000000004500000258';
 const EXPECTED_DATA_INVALID_INPUT = null;
 const EXPECTED_DATA_EDDYSTONE_UID = {
     txPower: -4,
-    namespace: "00112233445566778899",
-    instance: "aabbccddeeff"
+    deviceIds: [ "00112233445566778899/aabbccddeeff" ]
 };
 const EXPECTED_DATA_EDDYSTONE_URL = {
     txPower: 0,
-    url: "https://getpareto.com"
+    uri: "https://getpareto.com"
 };
 const EXPECTED_DATA_EDDYSTONE_TLM = {
     batteryVoltage: 3.0,
     temperature: 21.0,
-    transmissionCount: 69,
+    txCount: 69,
     uptime: 60000
 };
 

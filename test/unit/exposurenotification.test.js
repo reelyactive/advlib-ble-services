@@ -4,7 +4,7 @@
  */
 
 
-const service = require("../../lib/exposurenotification.js");
+const service = require('../../lib/exposurenotification.js');
 const assert = require ('assert');
 
 
@@ -18,7 +18,7 @@ const INPUT_DATA_EXPOSURE_NOTIFICATION =
 const EXPECTED_DATA_INVALID_INPUT = null;
 const EXPECTED_DATA_EXPOSURE_NOTIFICATION = {
     rollingProximityIdentifier: "00112233445566778899aabbccddeeff",
-    version: 1.0,
+    version: "1.0",
     txPower: -4
 };
 

@@ -4,7 +4,7 @@
  */
 
 
-const service = require("../../lib/minew.js");
+const service = require('../../lib/minew.js');
 const assert = require ('assert');
 
 
