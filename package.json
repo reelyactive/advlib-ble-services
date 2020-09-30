@@ -11,6 +11,7 @@
     "advlib",
     "Bluetooth Low Energy",
     "BLE",
+    "Bluetooth Service Data",
     "payload processor",
     "library"
   ],
