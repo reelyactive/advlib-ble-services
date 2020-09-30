@@ -1,13 +1,49 @@
 advlib-ble-services
 ===================
 
-Wireless advertising packet decoding library for Bluetooth Low Energy service data.
+Wireless advertising packet decoding library for Bluetooth Low Energy service data.  __advlib-ble-services__ is typically used as a library for [advlib-ble](https://github.com/reelyactive/advlib-ble) which itself is commonly a processor module of the protocol-agnostic [advlib](https://github.com/reelyactive/advlib).
+
+__advlib-ble-services__ is a lightweight [Node.js package](https://www.npmjs.com/package/advlib-ble-services) with no dependencies.  See also its sister library [advlib-ble-manufacturers](https://github.com/reelyactive/advlib-ble-manufacturers).
 
 
 Installation
 ------------
 
     npm install advlib-ble-services
+
+
+Hello advlib-ble-services!
+--------------------------
+
+```javascript
+const advlib = require('advlib-ble-services');
+
+let uuid = 'feaa';
+let serviceData = '10000367657470617265746f07';
+
+let processedData = advlib.processServiceData(uuid, serviceData);
+
+console.log(processedData);
+```
+
+Which should yield the following console output:
+
+    { txPower: 0, uri: "https://getpareto.com" }
+
+
+Supported Services
+------------------
+
+The following services, in order of their assigned UUIDs, are supported by __advlib-ble-services__.
+
+| Service UUID | Service Name          | /lib file                |
+|:-------------|:----------------------|:-------------------------|
+| 'fd6f'       | Exposure Notification | exposurenotification.js  |
+| 'feaa'       | Eddystone (Google)    | eddystone.js             |
+| 'ffe1'       | Minew                 | minew.js                 |
+
+Consult the [Bluetooth Assigned Numbers](https://www.bluetooth.com/specifications/assigned-numbers/) page for the most recent 16-bit UUIDs document.
+
 
 
 License
