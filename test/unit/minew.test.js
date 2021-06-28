@@ -21,19 +21,23 @@ const EXPECTED_DATA_INVALID_INPUT = null;
 const EXPECTED_DATA_TEMPERATURE_HUMIDITY = {
     batteryPercentage: 99,
     temperature: 21.5,
-    relativeHumidity: 50.0
+    relativeHumidity: 50.0,
+    uri: "https://sniffypedia.org/Organization/Shenzhen_Minew_Technologies_Co_Ltd/"
 };
 const EXPECTED_DATA_VISIBLE_LIGHT = {
     batteryPercentage: 69,
-    isVisibleLight: true
+    isVisibleLight: true,
+    uri: "https://sniffypedia.org/Organization/Shenzhen_Minew_Technologies_Co_Ltd/"
 };
 const EXPECTED_DATA_ACCELERATION = {
     batteryPercentage: 100,
-    acceleration: [ -0.5, 0.0, 0.5 ]
+    acceleration: [ -0.5, 0.0, 0.5 ],
+    uri: "https://sniffypedia.org/Organization/Shenzhen_Minew_Technologies_Co_Ltd/"
 };
 const EXPECTED_DATA_NAME = {
     batteryPercentage: 1,
-    name: "PLUS"
+    name: "PLUS",
+    uri: "https://sniffypedia.org/Organization/Shenzhen_Minew_Technologies_Co_Ltd/"
 };
 
 
