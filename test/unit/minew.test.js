@@ -14,6 +14,7 @@ const INPUT_DATA_TEMPERATURE_HUMIDITY = 'a1016315803200aabbccddeeff';
 const INPUT_DATA_VISIBLE_LIGHT = 'a1024501aabbccddeeff';
 const INPUT_DATA_ACCELERATION = 'a10364ff8000000080aabbccddeeff';
 const INPUT_DATA_NAME = 'a10801aabbccddeeff504c5553';
+const INPUT_DATA_VIBRATION = 'a118321234567801aabbccddeeff';
 
 
 // Expected outputs for the scenario
@@ -37,6 +38,11 @@ const EXPECTED_DATA_ACCELERATION = {
 const EXPECTED_DATA_NAME = {
     batteryPercentage: 1,
     name: "PLUS",
+    uri: "https://sniffypedia.org/Organization/Shenzhen_Minew_Technologies_Co_Ltd/"
+};
+const EXPECTED_DATA_VIBRATION = {
+    batteryPercentage: 50,
+    isVibration: true,
     uri: "https://sniffypedia.org/Organization/Shenzhen_Minew_Technologies_Co_Ltd/"
 };
 
@@ -76,6 +82,12 @@ describe('minew', function() {
   // Test the process function with valid name data
   it('should handle valid name data as input', function() {
     assert.deepEqual(service.process(INPUT_DATA_NAME), EXPECTED_DATA_NAME);
+  });
+
+  // Test the process function with valid vibration data
+  it('should handle valid vibration data as input', function() {
+    assert.deepEqual(service.process(INPUT_DATA_VIBRATION),
+                     EXPECTED_DATA_VIBRATION);
   });
 
 });
