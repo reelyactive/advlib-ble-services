@@ -1,5 +1,5 @@
 /**
- * Copyright reelyActive 2015-2020
+ * Copyright reelyActive 2015-2021
  * We believe in an open Internet of Things
  */
 
