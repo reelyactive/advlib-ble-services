@@ -39,6 +39,7 @@ The following services, in order of their assigned UUIDs, are supported by __adv
 | Service UUID | Service Name           | /lib file                |
 |:-------------|:-----------------------|:-------------------------|
 | '2a37'       | Heart Rate Measurement | gatt.js                  |
+| '2a67'       | Location and Speed     | gatt.js                  |
 | '2a6e'       | Temperature            | gatt.js                  |
 | 'fd6f'       | Exposure Notification  | exposurenotification.js  |
 | 'feaa'       | Eddystone (Google)     | eddystone.js             |
