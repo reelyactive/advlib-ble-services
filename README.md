@@ -38,15 +38,15 @@ The following services, in order of their assigned UUIDs, are supported by __adv
 
 | Service UUID | Service Name             | /lib file                |
 |:-------------|:-------------------------|:-------------------------|
-| '2a37'       | Heart Rate Measurement   | gatt.js                  |
-| '2a67'       | Location and Speed       | gatt.js                  |
-| '2a6c'       | Elevation                | gatt.js                  |
-| '2a6d'       | Pressure                 | gatt.js                  |
-| '2a6e'       | Temperature              | gatt.js                  |
-| '2aa1'       | Magnetic flux density 3D | gatt.js                  |
-| 'fd6f'       | Exposure Notification    | exposurenotification.js  |
-| 'feaa'       | Eddystone (Google)       | eddystone.js             |
-| 'ffe1'       | Minew                    | minew.js                 |
+| 0x2a37       | Heart Rate Measurement   | gatt.js                  |
+| 0x2a67       | Location and Speed       | gatt.js                  |
+| 0x2a6c       | Elevation                | gatt.js                  |
+| 0x2a6d       | Pressure                 | gatt.js                  |
+| 0x2a6e       | Temperature              | gatt.js                  |
+| 0x2aa1       | Magnetic flux density 3D | gatt.js                  |
+| 0xfd6f       | Exposure Notification    | exposurenotification.js  |
+| 0xfeaa       | Eddystone (Google)       | eddystone.js             |
+| 0xffe1       | Minew                    | minew.js                 |
 
 Consult the [Bluetooth Assigned Numbers](https://www.bluetooth.com/specifications/assigned-numbers/) page for the most recent 16-bit UUIDs document.
 
