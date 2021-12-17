@@ -17,6 +17,9 @@ const INPUT_DATA_LAS_MIN = '0000';
 const INPUT_DATA_LAS_LATLONELE = '0c003c1a201b9cec25d4393000';
 const INPUT_DATA_LAS_ALL = '1f00d20487d6123c1a201b9cec25d4393000f41a00';
 const INPUT_UUID_LAS = '2a67';
+const INPUT_DATA_ELEVATION_POSITIVE = '393000';
+const INPUT_DATA_ELEVATION_NEGATIVE = 'ffffff';
+const INPUT_UUID_ELEVATION = '2a6c';
 const INPUT_DATA_TEMPERATURE_UNKNOWN = '0080';
 const INPUT_DATA_TEMPERATURE_POSITIVE = '3408';
 const INPUT_DATA_TEMPERATURE_NEGATIVE = '2efb';
@@ -49,6 +52,8 @@ const EXPECTED_DATA_LAS_ALL = {
     elevation: 123.45,
     heading: 69
 };
+const EXPECTED_DATA_ELEVATION_POSITIVE = { elevation: 123.45 };
+const EXPECTED_DATA_ELEVATION_NEGATIVE = { elevation: -0.01 };
 const EXPECTED_DATA_TEMPERATURE_UNKNOWN = null;
 const EXPECTED_DATA_TEMPERATURE_POSITIVE = { temperature: 21 };
 const EXPECTED_DATA_TEMPERATURE_NEGATIVE = { temperature: -12.34 };
@@ -100,6 +105,18 @@ describe('gatt', function() {
                      EXPECTED_DATA_LAS_ALL);
   });
 
+  // Test the process function with positive elevation data
+  it('should handle positive elevation data as input', function() {
+    assert.deepEqual(service.process(INPUT_DATA_ELEVATION_POSITIVE,
+                     INPUT_UUID_ELEVATION), EXPECTED_DATA_ELEVATION_POSITIVE);
+  });
+
+  // Test the process function with negative elevation data
+  it('should handle negative elevation data as input', function() {
+    assert.deepEqual(service.process(INPUT_DATA_ELEVATION_NEGATIVE,
+                     INPUT_UUID_ELEVATION), EXPECTED_DATA_ELEVATION_NEGATIVE);
+  });
+
   // Test the process function with unknown temperature data
   it('should handle unknown temperature data as input', function() {
     assert.deepEqual(service.process(INPUT_DATA_TEMPERATURE_UNKNOWN,
@@ -124,15 +141,13 @@ describe('gatt', function() {
   // Test the process function with positive magnetic flux density data
   it('should handle positive magnetic flux density data as input', function() {
     assert.deepEqual(service.process(INPUT_DATA_MFD3D_POSITIVE,
-                     INPUT_UUID_MFD3D),
-                     EXPECTED_DATA_MFD3D_POSITIVE);
+                     INPUT_UUID_MFD3D), EXPECTED_DATA_MFD3D_POSITIVE);
   });
 
   // Test the process function with negative magnetic flux density data
   it('should handle negative magnetic flux density data as input', function() {
     assert.deepEqual(service.process(INPUT_DATA_MFD3D_NEGATIVE,
-                     INPUT_UUID_MFD3D),
-                     EXPECTED_DATA_MFD3D_NEGATIVE);
+                     INPUT_UUID_MFD3D), EXPECTED_DATA_MFD3D_NEGATIVE);
   });
 
 });
