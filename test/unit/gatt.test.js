@@ -60,8 +60,8 @@ const EXPECTED_DATA_PRESSURE = { pressure: 101325.0 };
 const EXPECTED_DATA_TEMPERATURE_UNKNOWN = null;
 const EXPECTED_DATA_TEMPERATURE_POSITIVE = { temperature: 21 };
 const EXPECTED_DATA_TEMPERATURE_NEGATIVE = { temperature: -12.34 };
-const EXPECTED_DATA_MFD3D_POSITIVE = { magneticFlux: [ 0.5, 0, 1 ] };
-const EXPECTED_DATA_MFD3D_NEGATIVE = { magneticFlux: [ -0.5, -0.001, -1 ] };
+const EXPECTED_DATA_MFD3D_POSITIVE = { magneticField: [ 0.5, 0, 1 ] };
+const EXPECTED_DATA_MFD3D_NEGATIVE = { magneticField: [ -0.5, -0.001, -1 ] };
 
 
 // Describe the scenario
