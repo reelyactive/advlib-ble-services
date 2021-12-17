@@ -21,6 +21,9 @@ const INPUT_DATA_TEMPERATURE_UNKNOWN = '0080';
 const INPUT_DATA_TEMPERATURE_POSITIVE = '3408';
 const INPUT_DATA_TEMPERATURE_NEGATIVE = '2efb';
 const INPUT_UUID_TEMPERATURE = '2a6e';
+const INPUT_DATA_MFD3D_POSITIVE = 'f4010000e803';
+const INPUT_DATA_MFD3D_NEGATIVE = '0cfeffff18fc';
+const INPUT_UUID_MFD3D = '2aa1';
 
 
 // Expected outputs for the scenario
@@ -49,6 +52,8 @@ const EXPECTED_DATA_LAS_ALL = {
 const EXPECTED_DATA_TEMPERATURE_UNKNOWN = null;
 const EXPECTED_DATA_TEMPERATURE_POSITIVE = { temperature: 21 };
 const EXPECTED_DATA_TEMPERATURE_NEGATIVE = { temperature: -12.34 };
+const EXPECTED_DATA_MFD3D_POSITIVE = { magneticFlux: [ 0.5, 0, 1 ] };
+const EXPECTED_DATA_MFD3D_NEGATIVE = { magneticFlux: [ -0.5, -0.001, -1 ] };
 
 
 // Describe the scenario
@@ -114,6 +119,20 @@ describe('gatt', function() {
     assert.deepEqual(service.process(INPUT_DATA_TEMPERATURE_NEGATIVE,
                      INPUT_UUID_TEMPERATURE),
                      EXPECTED_DATA_TEMPERATURE_NEGATIVE);
+  });
+
+  // Test the process function with positive magnetic flux density data
+  it('should handle positive magnetic flux density data as input', function() {
+    assert.deepEqual(service.process(INPUT_DATA_MFD3D_POSITIVE,
+                     INPUT_UUID_MFD3D),
+                     EXPECTED_DATA_MFD3D_POSITIVE);
+  });
+
+  // Test the process function with negative magnetic flux density data
+  it('should handle negative magnetic flux density data as input', function() {
+    assert.deepEqual(service.process(INPUT_DATA_MFD3D_NEGATIVE,
+                     INPUT_UUID_MFD3D),
+                     EXPECTED_DATA_MFD3D_NEGATIVE);
   });
 
 });

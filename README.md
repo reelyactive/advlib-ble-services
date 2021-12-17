@@ -36,14 +36,15 @@ Supported Services
 
 The following services, in order of their assigned UUIDs, are supported by __advlib-ble-services__.
 
-| Service UUID | Service Name           | /lib file                |
-|:-------------|:-----------------------|:-------------------------|
-| '2a37'       | Heart Rate Measurement | gatt.js                  |
-| '2a67'       | Location and Speed     | gatt.js                  |
-| '2a6e'       | Temperature            | gatt.js                  |
-| 'fd6f'       | Exposure Notification  | exposurenotification.js  |
-| 'feaa'       | Eddystone (Google)     | eddystone.js             |
-| 'ffe1'       | Minew                  | minew.js                 |
+| Service UUID | Service Name             | /lib file                |
+|:-------------|:-------------------------|:-------------------------|
+| '2a37'       | Heart Rate Measurement   | gatt.js                  |
+| '2a67'       | Location and Speed       | gatt.js                  |
+| '2a6e'       | Temperature              | gatt.js                  |
+| '2aa1'       | Magnetic flux density 3D | gatt.js                  |
+| 'fd6f'       | Exposure Notification    | exposurenotification.js  |
+| 'feaa'       | Eddystone (Google)       | eddystone.js             |
+| 'ffe1'       | Minew                    | minew.js                 |
 
 Consult the [Bluetooth Assigned Numbers](https://www.bluetooth.com/specifications/assigned-numbers/) page for the most recent 16-bit UUIDs document.
 
