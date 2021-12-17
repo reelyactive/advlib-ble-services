@@ -15,6 +15,7 @@ const INPUT_DATA_HRM_ALL = '1f7b00230100040002';
 const INPUT_UUID_HRM = '2a37';
 const INPUT_DATA_LAS_MIN = '0000';
 const INPUT_DATA_LAS_LATLONELE = '0c003c1a201b9cec25d4393000';
+const INPUT_DATA_LAS_ELEVATION = '0800393000';
 const INPUT_DATA_LAS_ALL = '1f00d20487d6123c1a201b9cec25d4393000f41a00';
 const INPUT_UUID_LAS = '2a67';
 const INPUT_DATA_ELEVATION_POSITIVE = '393000';
@@ -42,16 +43,13 @@ const EXPECTED_DATA_HRM_ALL = {
 };
 const EXPECTED_DATA_LAS_MIN = {};
 const EXPECTED_DATA_LAS_LATLONELE = {
-    latitude: 45.50887,
-    longitude: -73.57121,
-    elevation: 123.45
+    position: [ -73.57121, 45.50887, 123.45 ]
 };
+const EXPECTED_DATA_LAS_ELEVATION = { elevation: 123.45 };
 const EXPECTED_DATA_LAS_ALL = {
     speed: 12.34,
     distance: 123456.7,
-    latitude: 45.50887,
-    longitude: -73.57121,
-    elevation: 123.45,
+    position: [ -73.57121, 45.50887, 123.45 ],
     heading: 69
 };
 const EXPECTED_DATA_ELEVATION_POSITIVE = { elevation: 123.45 };
@@ -100,6 +98,12 @@ describe('gatt', function() {
   it('should handle lat/lon/ele LaS data as input', function() {
     assert.deepEqual(service.process(INPUT_DATA_LAS_LATLONELE, INPUT_UUID_LAS),
                      EXPECTED_DATA_LAS_LATLONELE);
+  });
+
+  // Test the process function with elevation LaS data
+  it('should handle elevation LaS data as input', function() {
+    assert.deepEqual(service.process(INPUT_DATA_LAS_ELEVATION, INPUT_UUID_LAS),
+                     EXPECTED_DATA_LAS_ELEVATION);
   });
 
   // Test the process function with complete LaS data
