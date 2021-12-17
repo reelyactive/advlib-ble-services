@@ -41,6 +41,7 @@ The following services, in order of their assigned UUIDs, are supported by __adv
 | '2a37'       | Heart Rate Measurement   | gatt.js                  |
 | '2a67'       | Location and Speed       | gatt.js                  |
 | '2a6c'       | Elevation                | gatt.js                  |
+| '2a6d'       | Pressure                 | gatt.js                  |
 | '2a6e'       | Temperature              | gatt.js                  |
 | '2aa1'       | Magnetic flux density 3D | gatt.js                  |
 | 'fd6f'       | Exposure Notification    | exposurenotification.js  |
