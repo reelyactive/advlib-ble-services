@@ -30,6 +30,9 @@ const INPUT_UUID_TEMPERATURE = '2a6e';
 const INPUT_DATA_MFD3D_POSITIVE = 'f4010000e803';
 const INPUT_DATA_MFD3D_NEGATIVE = '0cfeffff18fc';
 const INPUT_UUID_MFD3D = '2aa1';
+const INPUT_DATA_ILLUMINANCE_UNKNOWN = 'ffffff';
+const INPUT_DATA_ILLUMINANCE = 'a08601';
+const INPUT_UUID_ILLUMINANCE = '2afb';
 
 
 // Expected outputs for the scenario
@@ -60,6 +63,8 @@ const EXPECTED_DATA_TEMPERATURE_POSITIVE = { temperature: 21 };
 const EXPECTED_DATA_TEMPERATURE_NEGATIVE = { temperature: -12.34 };
 const EXPECTED_DATA_MFD3D_POSITIVE = { magneticField: [ 0.5, 0, 1 ] };
 const EXPECTED_DATA_MFD3D_NEGATIVE = { magneticField: [ -0.5, -0.001, -1 ] };
+const EXPECTED_DATA_ILLUMINANCE_UNKNOWN = null;
+const EXPECTED_DATA_ILLUMINANCE = { illuminance: 1000 };
 
 
 // Describe the scenario
@@ -161,6 +166,19 @@ describe('gatt', function() {
   it('should handle negative magnetic flux density data as input', function() {
     assert.deepEqual(service.process(INPUT_DATA_MFD3D_NEGATIVE,
                      INPUT_UUID_MFD3D), EXPECTED_DATA_MFD3D_NEGATIVE);
+  });
+
+  // Test the process function with unknown illuminance data
+  it('should handle unknown illuminance data as input', function() {
+    assert.deepEqual(service.process(INPUT_DATA_ILLUMINANCE_UNKNOWN,
+                     INPUT_UUID_ILLUMINANCE),
+                     EXPECTED_DATA_ILLUMINANCE_UNKNOWN);
+  });
+
+  // Test the process function with illuminance data
+  it('should handle illuminance data as input', function() {
+    assert.deepEqual(service.process(INPUT_DATA_ILLUMINANCE,
+                     INPUT_UUID_ILLUMINANCE), EXPECTED_DATA_ILLUMINANCE);
   });
 
 });
