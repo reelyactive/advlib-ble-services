@@ -52,6 +52,19 @@ The following services, in order of their assigned UUIDs, are supported by __adv
 Consult the [Bluetooth Assigned Numbers](https://www.bluetooth.com/specifications/assigned-numbers/) page for the most recent 16-bit UUIDs document.
 
 
+Contributing
+------------
+
+Discover [how to contribute](CONTRIBUTING.md) to this open source project which upholds a standard [code of conduct](CODE_OF_CONDUCT.md).
+
+
+Security
+--------
+
+Consult our [security policy](SECURITY.md) for best practices using this open source software and to report vulnerabilities.
+
+[![Known Vulnerabilities](https://snyk.io/test/github/reelyactive/advlib-ble-services/badge.svg)](https://snyk.io/test/github/reelyactive/advlib-ble-services)
+
 
 License
 -------
