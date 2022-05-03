@@ -46,6 +46,7 @@ The following services, in order of their assigned UUIDs, are supported by __adv
 | 0x2aa1       | Magnetic flux density 3D | gatt.js                  |
 | 0x2afb       | Illuminance              | gatt.js                  |
 | 0xfd6f       | Exposure Notification    | exposurenotification.js  |
+| 0xfdaf       | Wiliot                   | wiliot.js                |
 | 0xfeaa       | Eddystone (Google)       | eddystone.js             |
 | 0xffe1       | Minew                    | minew.js                 |
 
