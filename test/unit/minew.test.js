@@ -1,5 +1,5 @@
 /**
- * Copyright reelyActive 2015-2021
+ * Copyright reelyActive 2015-2022
  * We believe in an open Internet of Things
  */
 
@@ -27,7 +27,7 @@ const EXPECTED_DATA_TEMPERATURE_HUMIDITY = {
 };
 const EXPECTED_DATA_VISIBLE_LIGHT = {
     batteryPercentage: 69,
-    isVisibleLight: true,
+    isContactDetected: false,
     uri: "https://sniffypedia.org/Organization/Shenzhen_Minew_Technologies_Co_Ltd/"
 };
 const EXPECTED_DATA_ACCELERATION = {
