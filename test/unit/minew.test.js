@@ -14,6 +14,7 @@ const INPUT_DATA_TEMPERATURE_HUMIDITY = 'a1016315803200aabbccddeeff';
 const INPUT_DATA_VISIBLE_LIGHT = 'a1024501aabbccddeeff';
 const INPUT_DATA_ACCELERATION = 'a10364ff8000000080aabbccddeeff';
 const INPUT_DATA_NAME = 'a10801aabbccddeeff504c5553';
+const INPUT_DATA_PIR = 'a111320001aabbccddeeff';
 const INPUT_DATA_VIBRATION = 'a118321234567801aabbccddeeff';
 
 
@@ -38,6 +39,11 @@ const EXPECTED_DATA_ACCELERATION = {
 const EXPECTED_DATA_NAME = {
     batteryPercentage: 1,
     name: "PLUS",
+    uri: "https://sniffypedia.org/Organization/Shenzhen_Minew_Technologies_Co_Ltd/"
+};
+const EXPECTED_DATA_PIR = {
+    batteryPercentage: 50,
+    isMotionDetected: [ true ],
     uri: "https://sniffypedia.org/Organization/Shenzhen_Minew_Technologies_Co_Ltd/"
 };
 const EXPECTED_DATA_VIBRATION = {
@@ -82,6 +88,12 @@ describe('minew', function() {
   // Test the process function with valid name data
   it('should handle valid name data as input', function() {
     assert.deepEqual(service.process(INPUT_DATA_NAME), EXPECTED_DATA_NAME);
+  });
+
+  // Test the process function with valid passive infrared data
+  it('should handle valid passive infrared data as input', function() {
+    assert.deepEqual(service.process(INPUT_DATA_PIR),
+                     EXPECTED_DATA_PIR);
   });
 
   // Test the process function with valid vibration data
