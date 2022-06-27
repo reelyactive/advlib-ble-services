@@ -28,7 +28,7 @@ const EXPECTED_DATA_TEMPERATURE_HUMIDITY = {
 };
 const EXPECTED_DATA_VISIBLE_LIGHT = {
     batteryPercentage: 69,
-    isContactDetected: false,
+    isContactDetected: [ false ],
     uri: "https://sniffypedia.org/Organization/Shenzhen_Minew_Technologies_Co_Ltd/"
 };
 const EXPECTED_DATA_ACCELERATION = {
