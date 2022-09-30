@@ -17,6 +17,7 @@ const INPUT_DATA_NAME = 'a10801aabbccddeeff504c5553';
 const INPUT_DATA_PIR = 'a111320001aabbccddeeff';
 const INPUT_DATA_VIBRATION = 'a118321234567801aabbccddeeff';
 const INPUT_DATA_ILLUMINANCE = 'a119640ab4aabbccddeeff';
+const INPUT_DATA_TAMPER = 'a1204501aabbccddeeff';
 
 
 // Expected outputs for the scenario
@@ -55,6 +56,11 @@ const EXPECTED_DATA_VIBRATION = {
 const EXPECTED_DATA_ILLUMINANCE = {
     batteryPercentage: 100,
     illuminance: 2740,
+    uri: "https://sniffypedia.org/Organization/Shenzhen_Minew_Technologies_Co_Ltd/"
+};
+const EXPECTED_DATA_TAMPER = {
+    batteryPercentage: 69,
+    isContactDetected: [ false ],
     uri: "https://sniffypedia.org/Organization/Shenzhen_Minew_Technologies_Co_Ltd/"
 };
 
@@ -112,6 +118,12 @@ describe('minew', function() {
   it('should handle valid illuminance data as input', function() {
     assert.deepEqual(service.process(INPUT_DATA_ILLUMINANCE),
                      EXPECTED_DATA_ILLUMINANCE);
+  });
+
+  // Test the process function with valid tamper data
+  it('should handle valid tamper data as input', function() {
+    assert.deepEqual(service.process(INPUT_DATA_TAMPER),
+                     EXPECTED_DATA_TAMPER);
   });
 
 });
