@@ -50,7 +50,7 @@ const EXPECTED_DATA_PIR = {
 };
 const EXPECTED_DATA_VIBRATION = {
     batteryPercentage: 50,
-    isVibration: true,
+    isMotionDetected: [ true ],
     uri: "https://sniffypedia.org/Organization/Shenzhen_Minew_Technologies_Co_Ltd/"
 };
 const EXPECTED_DATA_ILLUMINANCE = {
