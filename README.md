@@ -53,6 +53,25 @@ The following services, in order of their assigned UUIDs, are supported by __adv
 Consult the [Bluetooth Assigned Numbers](https://www.bluetooth.com/specifications/assigned-numbers/) page for the most recent 16-bit UUIDs document.
 
 
+Supported Devices
+-----------------
+
+The following is a _non-exhaustive_ list of devices supported by __advlib-ble-services__.
+
+| Manufacturer | Model/Device             | /lib file                |
+|:-------------|:-------------------------|:-------------------------|
+| Various      | Heart rate monitor       | gatt.js                  |
+| Various      | Eddystone beacon         | eddystone.js             |
+| Various      | Android phone (contact tracing) | exposurenotification.js  |
+| Apple        | iPhone (contact tracing) | exposurenotification.js  |
+| Wiliot       | Pixel                    | wiliot.js                |
+| Minew        | E8S ([Tutorial](https://reelyactive.github.io/diy/minew-e8-config/)) | minew.js |
+| Minew        | S1 ([Tutorial](https://reelyactive.github.io/diy/minew-s1-config/)) | minew.js |
+| Minew        | MSP01                    | minew.js                 |
+| Minew        | MSV01                    | minew.js                 |
+| Minew        | MBT01                    | minew.js                 |
+
+
 Contributing
 ------------
 
