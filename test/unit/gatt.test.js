@@ -33,6 +33,8 @@ const INPUT_UUID_MFD3D = '2aa1';
 const INPUT_DATA_ILLUMINANCE_UNKNOWN = 'ffffff';
 const INPUT_DATA_ILLUMINANCE = 'a08601';
 const INPUT_UUID_ILLUMINANCE = '2afb';
+const INPUT_DATA_AMMONIA_CONCENTRATION = '7bb0';
+const INPUT_UUID_AMMONIA_CONCENTRATION = '2bcf';
 
 
 // Expected outputs for the scenario
@@ -65,6 +67,7 @@ const EXPECTED_DATA_MFD3D_POSITIVE = { magneticField: [ 0.5, 0, 1 ] };
 const EXPECTED_DATA_MFD3D_NEGATIVE = { magneticField: [ -0.5, -0.001, -1 ] };
 const EXPECTED_DATA_ILLUMINANCE_UNKNOWN = null;
 const EXPECTED_DATA_ILLUMINANCE = { illuminance: 1000 };
+const EXPECTED_DATA_AMMONIA_CONCENTRATION = { ammoniaConcentration: 1.23 };
 
 
 // Describe the scenario
@@ -179,6 +182,13 @@ describe('gatt', function() {
   it('should handle illuminance data as input', function() {
     assert.deepEqual(service.process(INPUT_DATA_ILLUMINANCE,
                      INPUT_UUID_ILLUMINANCE), EXPECTED_DATA_ILLUMINANCE);
+  });
+
+  // Test the process function with ammonia concentration data
+  it('should handle ammonia concentration data as input', function() {
+    assert.deepEqual(service.process(INPUT_DATA_AMMONIA_CONCENTRATION,
+                                     INPUT_UUID_AMMONIA_CONCENTRATION),
+                     EXPECTED_DATA_AMMONIA_CONCENTRATION);
   });
 
 });
