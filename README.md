@@ -68,6 +68,7 @@ The following is a _non-exhaustive_ list of devices supported by __advlib-ble-se
 | Wiliot       | Pixel                    | wiliot.js                |
 | Minew        | E8S ([Tutorial](https://reelyactive.github.io/diy/minew-e8-config/)) | minew.js |
 | Minew        | S1 ([Tutorial](https://reelyactive.github.io/diy/minew-s1-config/)) | minew.js |
+| Minew        | B10 ([Tutorial](https://reelyactive.github.io/diy/minew-b10-config/)) | minew.js |
 | Minew        | MSP01 ([Tutorial](https://reelyactive.github.io/diy/minew-msp01-config/)) | minew.js |
 | Minew        | MSV01                    | minew.js                 |
 | Minew        | MBT01                    | minew.js                 |
