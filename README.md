@@ -71,6 +71,7 @@ The following is a _non-exhaustive_ list of devices supported by __advlib-ble-se
 | Minew        | MSP01                    | minew.js                 |
 | Minew        | MSV01                    | minew.js                 |
 | Minew        | MBT01                    | minew.js                 |
+| Minew        | MSL01                    | minew.js                 |
 
 
 Contributing

@@ -1,5 +1,5 @@
 /**
- * Copyright reelyActive 2015-2022
+ * Copyright reelyActive 2015-2023
  * We believe in an open Internet of Things
  */
 
@@ -18,6 +18,7 @@ const INPUT_DATA_PIR = 'a111320001aabbccddeeff';
 const INPUT_DATA_VIBRATION = 'a118321234567801aabbccddeeff';
 const INPUT_DATA_ILLUMINANCE = 'a119640ab4aabbccddeeff';
 const INPUT_DATA_TAMPER = 'a1204501aabbccddeeff';
+const INPUT_DATA_WATER_DETECTION = 'a1216301aabbccddeeff';
 
 
 // Expected outputs for the scenario
@@ -61,6 +62,11 @@ const EXPECTED_DATA_ILLUMINANCE = {
 const EXPECTED_DATA_TAMPER = {
     batteryPercentage: 69,
     isContactDetected: [ false ],
+    uri: "https://sniffypedia.org/Organization/Shenzhen_Minew_Technologies_Co_Ltd/"
+};
+const EXPECTED_DATA_WATER_DETECTION = {
+    batteryPercentage: 99,
+    isLiquidDetected: [ true ],
     uri: "https://sniffypedia.org/Organization/Shenzhen_Minew_Technologies_Co_Ltd/"
 };
 
@@ -124,6 +130,12 @@ describe('minew', function() {
   it('should handle valid tamper data as input', function() {
     assert.deepEqual(service.process(INPUT_DATA_TAMPER),
                      EXPECTED_DATA_TAMPER);
+  });
+
+  // Test the process function with valid water detection data
+  it('should handle valid water detection data as input', function() {
+    assert.deepEqual(service.process(INPUT_DATA_WATER_DETECTION),
+                     EXPECTED_DATA_WATER_DETECTION);
   });
 
 });
