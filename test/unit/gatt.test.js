@@ -35,6 +35,9 @@ const INPUT_UUID_GENERIC_LEVEL = '2af9';
 const INPUT_DATA_ILLUMINANCE_UNKNOWN = 'ffffff';
 const INPUT_DATA_ILLUMINANCE = 'a08601';
 const INPUT_UUID_ILLUMINANCE = '2afb';
+const INPUT_DATA_CO2_CONCENTRATION_UNKNOWN = 'ffff';
+const INPUT_DATA_CO2_CONCENTRATION = 'de03';
+const INPUT_UUID_CO2_CONCENTRATION = '2b8c';
 const INPUT_DATA_AMMONIA_CONCENTRATION = '7bb0';
 const INPUT_UUID_AMMONIA_CONCENTRATION = '2bcf';
 
@@ -70,6 +73,8 @@ const EXPECTED_DATA_MFD3D_NEGATIVE = { magneticField: [ -0.5, -0.001, -1 ] };
 const EXPECTED_DATA_ILLUMINANCE_UNKNOWN = null;
 const EXPECTED_DATA_ILLUMINANCE = { illuminance: 1000 };
 const EXPECTED_DATA_GENERIC_LEVEL = { levelPercentage: 12.339971007858397 };
+const EXPECTED_DATA_CO2_CONCENTRATION_UNKNOWN = null;
+const EXPECTED_DATA_CO2_CONCENTRATION = { carbonDioxideConcentration: 990 };
 const EXPECTED_DATA_AMMONIA_CONCENTRATION = { ammoniaConcentration: 1.23 };
 
 
@@ -191,6 +196,20 @@ describe('gatt', function() {
   it('should handle illuminance data as input', function() {
     assert.deepEqual(service.process(INPUT_DATA_ILLUMINANCE,
                      INPUT_UUID_ILLUMINANCE), EXPECTED_DATA_ILLUMINANCE);
+  });
+
+  // Test the process function with unknown CO2 concentration data
+  it('should handle unknown CO2 concentration data as input', function() {
+    assert.deepEqual(service.process(INPUT_DATA_CO2_CONCENTRATION_UNKNOWN,
+                                     INPUT_UUID_CO2_CONCENTRATION),
+                     EXPECTED_DATA_CO2_CONCENTRATION_UNKNOWN);
+  });
+
+  // Test the process function with CO2 concentration data
+  it('should handle CO2 concentration data as input', function() {
+    assert.deepEqual(service.process(INPUT_DATA_CO2_CONCENTRATION,
+                                     INPUT_UUID_CO2_CONCENTRATION),
+                     EXPECTED_DATA_CO2_CONCENTRATION);
   });
 
   // Test the process function with ammonia concentration data
