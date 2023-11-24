@@ -48,6 +48,7 @@ The following services, in order of their assigned UUIDs, are supported by __adv
 | 0x2afb       | Illuminance              | gatt.js                  |
 | 0x2b8c       | CO2 Concentration        | gatt.js                  |
 | 0x2bcf       | Ammonia Concentration    | gatt.js                  |
+| 0x2bd1       | Methane Concentration    | gatt.js                  |
 | 0xfd6f       | Exposure Notification    | exposurenotification.js  |
 | 0xfdaf       | Wiliot                   | wiliot.js                |
 | 0xfeaa       | Eddystone (Google)       | eddystone.js             |

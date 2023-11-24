@@ -40,6 +40,8 @@ const INPUT_DATA_CO2_CONCENTRATION = 'de03';
 const INPUT_UUID_CO2_CONCENTRATION = '2b8c';
 const INPUT_DATA_AMMONIA_CONCENTRATION = '7bb0';
 const INPUT_UUID_AMMONIA_CONCENTRATION = '2bcf';
+const INPUT_DATA_METHANE_CONCENTRATION = '7b30';
+const INPUT_UUID_METHANE_CONCENTRATION = '2bd1';
 
 
 // Expected outputs for the scenario
@@ -76,6 +78,7 @@ const EXPECTED_DATA_GENERIC_LEVEL = { levelPercentage: 12.339971007858397 };
 const EXPECTED_DATA_CO2_CONCENTRATION_UNKNOWN = null;
 const EXPECTED_DATA_CO2_CONCENTRATION = { carbonDioxideConcentration: 990 };
 const EXPECTED_DATA_AMMONIA_CONCENTRATION = { ammoniaConcentration: 1.23 };
+const EXPECTED_DATA_METHANE_CONCENTRATION = { methaneConcentration: 123 };
 
 
 // Describe the scenario
@@ -217,6 +220,13 @@ describe('gatt', function() {
     assert.deepEqual(service.process(INPUT_DATA_AMMONIA_CONCENTRATION,
                                      INPUT_UUID_AMMONIA_CONCENTRATION),
                      EXPECTED_DATA_AMMONIA_CONCENTRATION);
+  });
+
+  // Test the process function with methane concentration data
+  it('should handle methane concentration data as input', function() {
+    assert.deepEqual(service.process(INPUT_DATA_METHANE_CONCENTRATION,
+                                     INPUT_UUID_METHANE_CONCENTRATION),
+                     EXPECTED_DATA_METHANE_CONCENTRATION);
   });
 
 });
