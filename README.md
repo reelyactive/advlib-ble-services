@@ -3,6 +3,8 @@ advlib-ble-services
 
 Wireless advertising packet decoding library for Bluetooth Low Energy service data.  __advlib-ble-services__ is typically used as a library for [advlib-ble](https://github.com/reelyactive/advlib-ble) which itself is commonly a processor module of the protocol-agnostic [advlib](https://github.com/reelyactive/advlib).
 
+![Overview of advlib-ble-services](https://reelyactive.github.io/advlib-ble-services/images/overview.png)
+
 __advlib-ble-services__ is a lightweight [Node.js package](https://www.npmjs.com/package/advlib-ble-services) with no dependencies.  See also its sister library [advlib-ble-manufacturers](https://github.com/reelyactive/advlib-ble-manufacturers).
 
 
