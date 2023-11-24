@@ -44,6 +44,7 @@ The following services, in order of their assigned UUIDs, are supported by __adv
 | 0x2a6d       | Pressure                 | gatt.js                  |
 | 0x2a6e       | Temperature              | gatt.js                  |
 | 0x2aa1       | Magnetic flux density 3D | gatt.js                  |
+| 0x2af9       | Generic Level            | gatt.js                  |
 | 0x2afb       | Illuminance              | gatt.js                  |
 | 0x2bcf       | Ammonia concentration    | gatt.js                  |
 | 0xfd6f       | Exposure Notification    | exposurenotification.js  |
@@ -73,6 +74,7 @@ The following is a _non-exhaustive_ list of devices supported by __advlib-ble-se
 | Minew        | MSV01                    | minew.js                 |
 | Minew        | MBT01                    | minew.js                 |
 | Minew        | MSL01                    | minew.js                 |
+| Arduino      | Nicla Vision ([Tutorial](https://reelyactive.github.io/diy/nicla-vision-dev/)) | gatt.js |
 
 
 Contributing
