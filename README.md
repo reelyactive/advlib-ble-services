@@ -36,26 +36,27 @@ Supported Services
 
 The following services, in order of their assigned UUIDs, are supported by __advlib-ble-services__.
 
-| Service UUID | Service Name             | /lib file                |
-|:-------------|:-------------------------|:-------------------------|
-| 0x2a37       | Heart Rate Measurement   | gatt.js                  |
-| 0x2a67       | Location and Speed       | gatt.js                  |
-| 0x2a6c       | Elevation                | gatt.js                  |
-| 0x2a6d       | Pressure                 | gatt.js                  |
-| 0x2a6e       | Temperature              | gatt.js                  |
-| 0x2aa1       | Magnetic flux density 3D | gatt.js                  |
-| 0x2aa2       | Language                 | gatt.js                  |
-| 0x2af9       | Generic Level            | gatt.js                  |
-| 0x2afb       | Illuminance              | gatt.js                  |
-| 0x2b8c       | CO2 Concentration        | gatt.js                  |
-| 0x2bcf       | Ammonia Concentration    | gatt.js                  |
-| 0x2bd1       | Methane Concentration    | gatt.js                  |
-| 0x2bd2       | NO2 Concentration        | gatt.js                  |
-| 0x2be7       | VOC Concentration        | gatt.js                  |
-| 0xfd6f       | Exposure Notification    | exposurenotification.js  |
-| 0xfdaf       | Wiliot                   | wiliot.js                |
-| 0xfeaa       | Eddystone (Google)       | eddystone.js             |
-| 0xffe1       | Minew                    | minew.js                 |
+| Service UUID | Service Name                  | /lib file                |
+|:-------------|:------------------------------|:-------------------------|
+| 0x2a37       | Heart Rate Measurement        | gatt.js                  |
+| 0x2a67       | Location and Speed            | gatt.js                  |
+| 0x2a6c       | Elevation                     | gatt.js                  |
+| 0x2a6d       | Pressure                      | gatt.js                  |
+| 0x2a6e       | Temperature                   | gatt.js                  |
+| 0x2aa1       | Magnetic flux density 3D      | gatt.js                  |
+| 0x2aa2       | Language                      | gatt.js                  |
+| 0x2af9       | Generic Level                 | gatt.js                  |
+| 0x2afb       | Illuminance                   | gatt.js                  |
+| 0x2b8c       | CO2 Concentration             | gatt.js                  |
+| 0x2bcf       | Ammonia Concentration         | gatt.js                  |
+| 0x2bd0       | Carbon Monoxide Concentration | gatt.js                  |
+| 0x2bd1       | Methane Concentration         | gatt.js                  |
+| 0x2bd2       | NO2 Concentration             | gatt.js                  |
+| 0x2be7       | VOC Concentration             | gatt.js                  |
+| 0xfd6f       | Exposure Notification         | exposurenotification.js  |
+| 0xfdaf       | Wiliot                        | wiliot.js                |
+| 0xfeaa       | Eddystone (Google)            | eddystone.js             |
+| 0xffe1       | Minew                         | minew.js                 |
 
 Consult the [Bluetooth Assigned Numbers](https://www.bluetooth.com/specifications/assigned-numbers/) page for the most recent 16-bit UUIDs document.
 
