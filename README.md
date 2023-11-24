@@ -44,6 +44,7 @@ The following services, in order of their assigned UUIDs, are supported by __adv
 | 0x2a6d       | Pressure                 | gatt.js                  |
 | 0x2a6e       | Temperature              | gatt.js                  |
 | 0x2aa1       | Magnetic flux density 3D | gatt.js                  |
+| 0x2aa2       | Language                 | gatt.js                  |
 | 0x2af9       | Generic Level            | gatt.js                  |
 | 0x2afb       | Illuminance              | gatt.js                  |
 | 0x2b8c       | CO2 Concentration        | gatt.js                  |
