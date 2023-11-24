@@ -44,6 +44,9 @@ const INPUT_DATA_METHANE_CONCENTRATION = '7b30';
 const INPUT_UUID_METHANE_CONCENTRATION = '2bd1';
 const INPUT_DATA_NO2_CONCENTRATION = '9ad2';
 const INPUT_UUID_NO2_CONCENTRATION = '2bd2';
+const INPUT_DATA_VOC_CONCENTRATION_UNKNOWN = 'ffff';
+const INPUT_DATA_VOC_CONCENTRATION = 'de03';
+const INPUT_UUID_VOC_CONCENTRATION = '2be7';
 
 
 // Expected outputs for the scenario
@@ -82,6 +85,10 @@ const EXPECTED_DATA_CO2_CONCENTRATION = { carbonDioxideConcentration: 990 };
 const EXPECTED_DATA_AMMONIA_CONCENTRATION = { ammoniaConcentration: 1.23 };
 const EXPECTED_DATA_METHANE_CONCENTRATION = { methaneConcentration: 123 };
 const EXPECTED_DATA_NO2_CONCENTRATION = { nitrogenDioxideConcentration: 666 };
+const EXPECTED_DATA_VOC_CONCENTRATION_UNKNOWN = null;
+const EXPECTED_DATA_VOC_CONCENTRATION = {
+    volatileOrganicCompoundsConcentration: 0.99
+};
 
 
 // Describe the scenario
@@ -237,6 +244,20 @@ describe('gatt', function() {
     assert.deepEqual(service.process(INPUT_DATA_NO2_CONCENTRATION,
                                      INPUT_UUID_NO2_CONCENTRATION),
                      EXPECTED_DATA_NO2_CONCENTRATION);
+  });
+
+  // Test the process function with unknown VOC concentration data
+  it('should handle unknown VOC concentration data as input', function() {
+    assert.deepEqual(service.process(INPUT_DATA_VOC_CONCENTRATION_UNKNOWN,
+                                     INPUT_UUID_VOC_CONCENTRATION),
+                     EXPECTED_DATA_VOC_CONCENTRATION_UNKNOWN);
+  });
+
+  // Test the process function with VOC concentration data
+  it('should handle VOC concentration data as input', function() {
+    assert.deepEqual(service.process(INPUT_DATA_VOC_CONCENTRATION,
+                                     INPUT_UUID_VOC_CONCENTRATION),
+                     EXPECTED_DATA_VOC_CONCENTRATION);
   });
 
 });
