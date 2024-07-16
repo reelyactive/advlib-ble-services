@@ -22,7 +22,7 @@ const EXPECTED_DATA_POWER_LOCATION = {
     // TODO: x/y/z uncertainty
     txPower: -50,
     isStationary: true,
-    position: [ -121.978808, 37.419243, 4 ],
+    position: [ -121.97880798515105, 37.41924302039275, 4 ],
     uri: "https://sniffypedia.org/Organization/Hewlett_Packard_Enterprise_Company/"
 };
 const EXPECTED_DATA_FLOOR_LOCATION = {
