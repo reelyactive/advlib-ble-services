@@ -57,6 +57,7 @@ The following services, in order of their assigned UUIDs, are supported by __adv
 | 0x2bd0       | Carbon Monoxide Concentration | gatt.js                     |
 | 0x2bd1       | Methane Concentration         | gatt.js                     |
 | 0x2bd2       | NO2 Concentration             | gatt.js                     |
+| 0x2be4       | Noise                         | gatt.js                     |
 | 0x2be7       | VOC Concentration             | gatt.js                     |
 | 0xfd6f       | Exposure Notification         | exposurenotification.js     |
 | 0xfd9f       | Hewlett Packard Enterprise    | hewlettpackardenterprise.js |
