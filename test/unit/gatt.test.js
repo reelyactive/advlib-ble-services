@@ -34,6 +34,8 @@ const INPUT_DATA_MFD3D_NEGATIVE = '0cfeffff18fc';
 const INPUT_UUID_MFD3D = '2aa1';
 const INPUT_DATA_LANGUAGE = '6672';
 const INPUT_UUID_LANGUAGE = '2aa2';
+const INPUT_DATA_ELECTRIC_CURRENT = '3930';
+const INPUT_UUID_ELECTRIC_CURRENT = '2aee';
 const INPUT_DATA_GENERIC_LEVEL = '971f';
 const INPUT_UUID_GENERIC_LEVEL = '2af9';
 const INPUT_DATA_ILLUMINANCE_UNKNOWN = 'ffffff';
@@ -87,6 +89,7 @@ const EXPECTED_DATA_MFD3D_NEGATIVE = { magneticField: [ -0.5, -0.001, -1 ] };
 const EXPECTED_DATA_ILLUMINANCE_UNKNOWN = null;
 const EXPECTED_DATA_ILLUMINANCE = { illuminance: 1000 };
 const EXPECTED_DATA_LANGUAGE = { languages: [ 'fr' ] };
+const EXPECTED_DATA_ELECTRIC_CURRENT = { amperage: 123.45 };
 const EXPECTED_DATA_GENERIC_LEVEL = { levelPercentage: 12.339971007858397 };
 const EXPECTED_DATA_CO2_CONCENTRATION_UNKNOWN = null;
 const EXPECTED_DATA_CO2_CONCENTRATION = { carbonDioxideConcentration: 990 };
@@ -214,6 +217,13 @@ describe('gatt', function() {
   it('should handle language data as input', function() {
     assert.deepEqual(service.process(INPUT_DATA_LANGUAGE,
                      INPUT_UUID_LANGUAGE), EXPECTED_DATA_LANGUAGE);
+  });
+
+  // Test the process function with electric current data
+  it('should handle electric current data as input', function() {
+    assert.deepEqual(service.process(INPUT_DATA_ELECTRIC_CURRENT,
+                                     INPUT_UUID_ELECTRIC_CURRENT),
+                     EXPECTED_DATA_ELECTRIC_CURRENT);
   });
 
   // Test the process function with generic level data
