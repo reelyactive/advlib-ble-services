@@ -45,6 +45,8 @@ const INPUT_UUID_GENERIC_LEVEL = '2af9';
 const INPUT_DATA_ILLUMINANCE_UNKNOWN = 'ffffff';
 const INPUT_DATA_ILLUMINANCE = 'a08601';
 const INPUT_UUID_ILLUMINANCE = '2afb';
+const INPUT_DATA_VOLTAGE = 'dc1e';
+const INPUT_UUID_VOLTAGE = '2b18';
 const INPUT_DATA_CO2_CONCENTRATION_UNKNOWN = 'ffff';
 const INPUT_DATA_CO2_CONCENTRATION = 'de03';
 const INPUT_UUID_CO2_CONCENTRATION = '2b8c';
@@ -99,6 +101,7 @@ const EXPECTED_DATA_ILLUMINANCE = { illuminance: 1000 };
 const EXPECTED_DATA_LANGUAGE = { languages: [ 'fr' ] };
 const EXPECTED_DATA_ELECTRIC_CURRENT = { amperage: 123.45 };
 const EXPECTED_DATA_GENERIC_LEVEL = { levelPercentage: 12.339971007858397 };
+const EXPECTED_DATA_VOLTAGE = { voltage: 123.4375 };
 const EXPECTED_DATA_CO2_CONCENTRATION_UNKNOWN = null;
 const EXPECTED_DATA_CO2_CONCENTRATION = { carbonDioxideConcentration: 990 };
 const EXPECTED_DATA_AMMONIA_CONCENTRATION = { ammoniaConcentration: 1.23 };
@@ -265,6 +268,12 @@ describe('gatt', function() {
   it('should handle illuminance data as input', function() {
     assert.deepEqual(service.process(INPUT_DATA_ILLUMINANCE,
                      INPUT_UUID_ILLUMINANCE), EXPECTED_DATA_ILLUMINANCE);
+  });
+
+  // Test the process function with voltage data
+  it('should handle voltage data as input', function() {
+    assert.deepEqual(service.process(INPUT_DATA_VOLTAGE, INPUT_UUID_VOLTAGE),
+                     EXPECTED_DATA_VOLTAGE);
   });
 
   // Test the process function with unknown CO2 concentration data

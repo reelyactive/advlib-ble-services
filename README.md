@@ -53,6 +53,7 @@ The following services, in order of their assigned UUIDs, are supported by __adv
 | 0x2aee       | Electric Current              | gatt.js                     |
 | 0x2af9       | Generic Level                 | gatt.js                     |
 | 0x2afb       | Illuminance                   | gatt.js                     |
+| 0x2b18       | Voltage                       | gatt.js                     |
 | 0x2b8c       | CO2 Concentration             | gatt.js                     |
 | 0x2bcf       | Ammonia Concentration         | gatt.js                     |
 | 0x2bd0       | Carbon Monoxide Concentration | gatt.js                     |
