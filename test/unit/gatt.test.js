@@ -10,6 +10,8 @@ const assert = require ('assert');
 
 // Input data for the scenario
 const INPUT_UUID_INVALID = 'ffff';
+const INPUT_DATA_TX_POWER_LEVEL = 'fc';
+const INPUT_UUID_TX_POWER_LEVEL = '2a07';
 const INPUT_DATA_BATTERY_LEVEL = '45';
 const INPUT_UUID_BATTERY_LEVEL = '2a19';
 const INPUT_DATA_HRM_MIN = '007b';
@@ -63,6 +65,7 @@ const INPUT_UUID_VOC_CONCENTRATION = '2be7';
 
 // Expected outputs for the scenario
 const EXPECTED_DATA_INVALID_INPUT = null;
+const EXPECTED_DATA_TX_POWER_LEVEL = { txPower: -4 };
 const EXPECTED_DATA_BATTERY_LEVEL = { batteryPercentage: 69 };
 const EXPECTED_DATA_HRM_MIN = { heartRate: 123 };
 const EXPECTED_DATA_HRM_ALL = {
@@ -123,6 +126,13 @@ describe('gatt', function() {
   it('should handle an invalid UUID as input', function() {
     assert.deepEqual(service.process(null, INPUT_UUID_INVALID),
                      EXPECTED_DATA_INVALID_INPUT);
+  });
+
+  // Test the process function with tx power level data
+  it('should handle tx power level data as input', function() {
+    assert.deepEqual(service.process(INPUT_DATA_TX_POWER_LEVEL,
+                                     INPUT_UUID_TX_POWER_LEVEL),
+                     EXPECTED_DATA_TX_POWER_LEVEL);
   });
 
   // Test the process function with battery level data

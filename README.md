@@ -40,6 +40,7 @@ The following services, in order of their assigned UUIDs, are supported by __adv
 
 | Service UUID | Service Name                  | /lib file                   |
 |:-------------|:------------------------------|:----------------------------|
+| 0x2a07       | Tx Power Level                | gatt.js                     |
 | 0x2a19       | Battery Level                 | gatt.js                     |
 | 0x2a37       | Heart Rate Measurement        | gatt.js                     |
 | 0x2a67       | Location and Speed            | gatt.js                     |
