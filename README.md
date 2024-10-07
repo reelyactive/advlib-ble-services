@@ -46,6 +46,7 @@ The following services, in order of their assigned UUIDs, are supported by __adv
 | 0x2a6c       | Elevation                     | gatt.js                     |
 | 0x2a6d       | Pressure                      | gatt.js                     |
 | 0x2a6e       | Temperature                   | gatt.js                     |
+| 0x2a6f       | Humidity                      | gatt.js                     |
 | 0x2aa1       | Magnetic flux density 3D      | gatt.js                     |
 | 0x2aa2       | Language                      | gatt.js                     |
 | 0x2aee       | Electric Current              | gatt.js                     |

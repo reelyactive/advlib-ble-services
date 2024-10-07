@@ -29,6 +29,8 @@ const INPUT_DATA_TEMPERATURE_UNKNOWN = '0080';
 const INPUT_DATA_TEMPERATURE_POSITIVE = '3408';
 const INPUT_DATA_TEMPERATURE_NEGATIVE = '2efb';
 const INPUT_UUID_TEMPERATURE = '2a6e';
+const INPUT_DATA_HUMIDITY = '391b';
+const INPUT_UUID_HUMIDITY = '2a6f';
 const INPUT_DATA_MFD3D_POSITIVE = 'f4010000e803';
 const INPUT_DATA_MFD3D_NEGATIVE = '0cfeffff18fc';
 const INPUT_UUID_MFD3D = '2aa1';
@@ -84,6 +86,7 @@ const EXPECTED_DATA_PRESSURE = { pressure: 101325.0 };
 const EXPECTED_DATA_TEMPERATURE_UNKNOWN = null;
 const EXPECTED_DATA_TEMPERATURE_POSITIVE = { temperature: 21 };
 const EXPECTED_DATA_TEMPERATURE_NEGATIVE = { temperature: -12.34 };
+const EXPECTED_DATA_HUMIDITY = { relativeHumidity: 69.69 };
 const EXPECTED_DATA_MFD3D_POSITIVE = { magneticField: [ 0.5, 0, 1 ] };
 const EXPECTED_DATA_MFD3D_NEGATIVE = { magneticField: [ -0.5, -0.001, -1 ] };
 const EXPECTED_DATA_ILLUMINANCE_UNKNOWN = null;
@@ -199,6 +202,12 @@ describe('gatt', function() {
     assert.deepEqual(service.process(INPUT_DATA_TEMPERATURE_NEGATIVE,
                      INPUT_UUID_TEMPERATURE),
                      EXPECTED_DATA_TEMPERATURE_NEGATIVE);
+  });
+
+  // Test the process function with humidity data
+  it('should handle humidity data as input', function() {
+    assert.deepEqual(service.process(INPUT_DATA_HUMIDITY, INPUT_UUID_HUMIDITY),
+                     EXPECTED_DATA_HUMIDITY);
   });
 
   // Test the process function with positive magnetic flux density data
