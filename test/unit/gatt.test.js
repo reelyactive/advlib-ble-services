@@ -1,5 +1,5 @@
 /**
- * Copyright reelyActive 2021
+ * Copyright reelyActive 2021-2024
  * We believe in an open Internet of Things
  */
 
@@ -10,6 +10,8 @@ const assert = require ('assert');
 
 // Input data for the scenario
 const INPUT_UUID_INVALID = 'ffff';
+const INPUT_DATA_BATTERY_LEVEL = '45';
+const INPUT_UUID_BATTERY_LEVEL = '2a19';
 const INPUT_DATA_HRM_MIN = '007b';
 const INPUT_DATA_HRM_ALL = '1f7b00230100040002';
 const INPUT_UUID_HRM = '2a37';
@@ -55,6 +57,7 @@ const INPUT_UUID_VOC_CONCENTRATION = '2be7';
 
 // Expected outputs for the scenario
 const EXPECTED_DATA_INVALID_INPUT = null;
+const EXPECTED_DATA_BATTERY_LEVEL = { batteryPercentage: 69 };
 const EXPECTED_DATA_HRM_MIN = { heartRate: 123 };
 const EXPECTED_DATA_HRM_ALL = {
     heartRate: 123,
@@ -111,6 +114,13 @@ describe('gatt', function() {
   it('should handle an invalid UUID as input', function() {
     assert.deepEqual(service.process(null, INPUT_UUID_INVALID),
                      EXPECTED_DATA_INVALID_INPUT);
+  });
+
+  // Test the process function with battery level data
+  it('should handle battery level data as input', function() {
+    assert.deepEqual(service.process(INPUT_DATA_BATTERY_LEVEL,
+                                     INPUT_UUID_BATTERY_LEVEL),
+                     EXPECTED_DATA_BATTERY_LEVEL);
   });
 
   // Test the process function with minimal HRM data
