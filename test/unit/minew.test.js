@@ -15,6 +15,7 @@ const INPUT_DATA_VISIBLE_LIGHT = 'a1024501aabbccddeeff';
 const INPUT_DATA_ACCELERATION = 'a10364ff8000000080aabbccddeeff';
 const INPUT_DATA_NAME = 'a10801aabbccddeeff504c5553';
 const INPUT_DATA_PIR = 'a111320001aabbccddeeff';
+const INPUT_DATA_TVOC = 'a112634000aabbccddeeff';
 const INPUT_DATA_TEMPERATURE = 'a113631973aabbccddeeff';
 const INPUT_DATA_VIBRATION = 'a118321234567801aabbccddeeff';
 const INPUT_DATA_ILLUMINANCE = 'a119640ab4aabbccddeeff';
@@ -48,6 +49,11 @@ const EXPECTED_DATA_NAME = {
 const EXPECTED_DATA_PIR = {
     batteryPercentage: 50,
     isMotionDetected: [ true ],
+    uri: "https://sniffypedia.org/Organization/Shenzhen_Minew_Technologies_Co_Ltd/"
+};
+const EXPECTED_DATA_TVOC = {
+    batteryPercentage: 99,
+    volatileOrganicCompoundsConcentration: 16.384,
     uri: "https://sniffypedia.org/Organization/Shenzhen_Minew_Technologies_Co_Ltd/"
 };
 const EXPECTED_DATA_TEMPERATURE = {
@@ -118,6 +124,11 @@ describe('minew', function() {
   it('should handle valid passive infrared data as input', function() {
     assert.deepEqual(service.process(INPUT_DATA_PIR),
                      EXPECTED_DATA_PIR);
+  });
+
+  // Test the process function with valid TVOC data
+  it('should handle valid TVOC data as input', function() {
+    assert.deepEqual(service.process(INPUT_DATA_TVOC), EXPECTED_DATA_TVOC);
   });
 
   // Test the process function with valid temperature data
