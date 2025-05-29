@@ -13,6 +13,7 @@ const INPUT_DATA_INVALID_INPUT = 'ff';
 const INPUT_DATA_TEMPERATURE_HUMIDITY = 'a1016315803200aabbccddeeff';
 const INPUT_DATA_VISIBLE_LIGHT = 'a1024501aabbccddeeff';
 const INPUT_DATA_ACCELERATION = 'a10364ff8000000080aabbccddeeff';
+const INPUT_DATA_DFU = 'a107aabbccddeeff';
 const INPUT_DATA_NAME = 'a10801aabbccddeeff504c5553';
 const INPUT_DATA_PIR = 'a111320001aabbccddeeff';
 const INPUT_DATA_TVOC = 'a112634000aabbccddeeff';
@@ -39,6 +40,9 @@ const EXPECTED_DATA_VISIBLE_LIGHT = {
 const EXPECTED_DATA_ACCELERATION = {
     batteryPercentage: 100,
     acceleration: [ -0.5, 0.0, 0.5 ],
+    uri: "https://sniffypedia.org/Organization/Shenzhen_Minew_Technologies_Co_Ltd/"
+};
+const EXPECTED_DATA_DFU = {
     uri: "https://sniffypedia.org/Organization/Shenzhen_Minew_Technologies_Co_Ltd/"
 };
 const EXPECTED_DATA_NAME = {
@@ -113,6 +117,11 @@ describe('minew', function() {
   it('should handle valid acceleration data as input', function() {
     assert.deepEqual(service.process(INPUT_DATA_ACCELERATION),
                      EXPECTED_DATA_ACCELERATION);
+  });
+
+  // Test the process function with valid DFU data
+  it('should handle valid DFU data as input', function() {
+    assert.deepEqual(service.process(INPUT_DATA_DFU), EXPECTED_DATA_DFU);
   });
 
   // Test the process function with valid name data
