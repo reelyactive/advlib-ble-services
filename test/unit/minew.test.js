@@ -18,6 +18,7 @@ const INPUT_DATA_NAME = 'a10801aabbccddeeff504c5553';
 const INPUT_DATA_PIR = 'a111320001aabbccddeeff';
 const INPUT_DATA_TVOC = 'a112634000aabbccddeeff';
 const INPUT_DATA_TEMPERATURE = 'a113631973aabbccddeeff';
+const INPUT_DATA_MAGNETIC_FIELD = 'a1166400003380013baabbccddeeff';
 const INPUT_DATA_VIBRATION = 'a118321234567801aabbccddeeff';
 const INPUT_DATA_ILLUMINANCE = 'a119640ab4aabbccddeeff';
 const INPUT_DATA_TAMPER = 'a1204501aabbccddeeff';
@@ -63,6 +64,11 @@ const EXPECTED_DATA_TVOC = {
 const EXPECTED_DATA_TEMPERATURE = {
     batteryPercentage: 99,
     temperature: 25.44921875,
+    uri: "https://sniffypedia.org/Organization/Shenzhen_Minew_Technologies_Co_Ltd/"
+};
+const EXPECTED_DATA_MAGNETIC_FIELD = {
+    batteryPercentage: 100,
+    magneticField: [ 0, 0.515, 0.0123046875 ],
     uri: "https://sniffypedia.org/Organization/Shenzhen_Minew_Technologies_Co_Ltd/"
 };
 const EXPECTED_DATA_VIBRATION = {
@@ -144,6 +150,12 @@ describe('minew', function() {
   it('should handle valid temperature data as input', function() {
     assert.deepEqual(service.process(INPUT_DATA_TEMPERATURE),
                      EXPECTED_DATA_TEMPERATURE);
+  });
+
+  // Test the process function with valid magnetic field data
+  it('should handle valid magnetic field data as input', function() {
+    assert.deepEqual(service.process(INPUT_DATA_MAGNETIC_FIELD),
+                     EXPECTED_DATA_MAGNETIC_FIELD);
   });
 
   // Test the process function with valid vibration data
