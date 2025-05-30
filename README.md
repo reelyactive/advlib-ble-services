@@ -89,6 +89,7 @@ The following is a _non-exhaustive_ list of devices supported by __advlib-ble-se
 | Minew        | MSV01                    | minew.js                 |
 | Minew        | MBT01                    | minew.js                 |
 | Minew        | MSL01                    | minew.js                 |
+| Minew        | MSA01                    | minew.js                 |
 | Arduino      | Nicla Vision ([Tutorial](https://reelyactive.github.io/diy/nicla-vision-dev/)) | gatt.js |
 
 
