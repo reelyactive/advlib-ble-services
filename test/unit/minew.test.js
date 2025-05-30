@@ -21,6 +21,7 @@ const INPUT_DATA_TVOC = 'a112634000aabbccddeeff';
 const INPUT_DATA_TEMPERATURE = 'a113631973aabbccddeeff';
 const INPUT_DATA_ACC_GYRO = 'a1150000ff80013b000000449e58aabbccddeeff';
 const INPUT_DATA_MAGNETIC_FIELD = 'a1166400003380013baabbccddeeff';
+const INPUT_DATA_PRESSURE = 'a1176304840000aabbccddeeff';
 const INPUT_DATA_VIBRATION = 'a118321234567801aabbccddeeff';
 const INPUT_DATA_PHOTORESISTANCE = 'a119640ab4aabbccddeeff';
 const INPUT_DATA_TAMPER = 'a1204501aabbccddeeff';
@@ -81,6 +82,11 @@ const EXPECTED_DATA_ACC_GYRO = {
 const EXPECTED_DATA_MAGNETIC_FIELD = {
     batteryPercentage: 100,
     magneticField: [ 0, 0.515, 0.0123046875 ],
+    uri: "https://sniffypedia.org/Organization/Shenzhen_Minew_Technologies_Co_Ltd/"
+};
+const EXPECTED_DATA_PRESSURE = {
+    batteryPercentage: 99,
+    pressure: 115600,
     uri: "https://sniffypedia.org/Organization/Shenzhen_Minew_Technologies_Co_Ltd/"
 };
 const EXPECTED_DATA_VIBRATION = {
@@ -180,6 +186,12 @@ describe('minew', function() {
   it('should handle valid magnetic field data as input', function() {
     assert.deepEqual(service.process(INPUT_DATA_MAGNETIC_FIELD),
                      EXPECTED_DATA_MAGNETIC_FIELD);
+  });
+
+  // Test the process function with valid pressure data
+  it('should handle valid pressure data as input', function() {
+    assert.deepEqual(service.process(INPUT_DATA_PRESSURE),
+                     EXPECTED_DATA_PRESSURE);
   });
 
   // Test the process function with valid vibration data
