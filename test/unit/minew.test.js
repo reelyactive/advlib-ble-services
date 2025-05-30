@@ -20,7 +20,7 @@ const INPUT_DATA_TVOC = 'a112634000aabbccddeeff';
 const INPUT_DATA_TEMPERATURE = 'a113631973aabbccddeeff';
 const INPUT_DATA_MAGNETIC_FIELD = 'a1166400003380013baabbccddeeff';
 const INPUT_DATA_VIBRATION = 'a118321234567801aabbccddeeff';
-const INPUT_DATA_ILLUMINANCE = 'a119640ab4aabbccddeeff';
+const INPUT_DATA_PHOTORESISTANCE = 'a119640ab4aabbccddeeff';
 const INPUT_DATA_TAMPER = 'a1204501aabbccddeeff';
 const INPUT_DATA_WATER_DETECTION = 'a1216301aabbccddeeff';
 
@@ -76,9 +76,9 @@ const EXPECTED_DATA_VIBRATION = {
     isMotionDetected: [ true ],
     uri: "https://sniffypedia.org/Organization/Shenzhen_Minew_Technologies_Co_Ltd/"
 };
-const EXPECTED_DATA_ILLUMINANCE = {
+const EXPECTED_DATA_PHOTORESISTANCE = {
     batteryPercentage: 100,
-    illuminance: 2740,
+    luminousFlux: 2740,
     uri: "https://sniffypedia.org/Organization/Shenzhen_Minew_Technologies_Co_Ltd/"
 };
 const EXPECTED_DATA_TAMPER = {
@@ -164,10 +164,10 @@ describe('minew', function() {
                      EXPECTED_DATA_VIBRATION);
   });
 
-  // Test the process function with valid illuminance data
-  it('should handle valid illuminance data as input', function() {
-    assert.deepEqual(service.process(INPUT_DATA_ILLUMINANCE),
-                     EXPECTED_DATA_ILLUMINANCE);
+  // Test the process function with valid photoresistance data
+  it('should handle valid photoresistance data as input', function() {
+    assert.deepEqual(service.process(INPUT_DATA_PHOTORESISTANCE),
+                     EXPECTED_DATA_PHOTORESISTANCE);
   });
 
   // Test the process function with valid tamper data
