@@ -65,7 +65,7 @@ The following services, in order of their assigned UUIDs, are supported by __adv
 | 0xfd9f       | Hewlett Packard Enterprise    | hewlettpackardenterprise.js |
 | 0xfdaf       | Wiliot                        | wiliot.js                   |
 | 0xfeaa       | Eddystone (Google)            | eddystone.js                |
-| 0xffe1       | Minew                         | minew.js                    |
+| 0xffe1       | Minew BeaconPlus              | minew.js                    |
 
 Consult the [Bluetooth Assigned Numbers](https://www.bluetooth.com/specifications/assigned-numbers/) page for the most recent 16-bit UUIDs document.
 
@@ -90,6 +90,33 @@ The following is a _non-exhaustive_ list of devices supported by __advlib-ble-se
 | Minew        | MBT01                    | minew.js                 |
 | Minew        | MSL01                    | minew.js                 |
 | Arduino      | Nicla Vision ([Tutorial](https://reelyactive.github.io/diy/nicla-vision-dev/)) | gatt.js |
+
+
+Supported Minew BeaconPlus Frames
+---------------------------------
+
+The following BeaconPlus frames (UUID: 0xffe1, Frame type: 0xa1), in order of their version number, are supported by __advlib-ble-services__.
+
+| Number | Frame           | Properties                                          |
+|:-------|:----------------|:--------------------------------------------------|
+| 0x01   | HT              | batteryPercentage, temperature, relativeHumidity  |
+| 0x02   | Visible Light   | batteryPercentage, isContactDetected              |
+| 0x03   | ACC-Axis        | acceleration, batteryPercentage                   |
+| 0x05   | Light lux       | batteryPercentage, illuminance                    |
+| 0x07   | DFU             |                                                   |
+| 0x08   | Device Info     | batteryPercentage, name                           |
+| 0x11   | PIR             | batteryPercentage, isMotionDetected               |
+| 0x12   | TVOC            | batteryPercentage, volatileOrganicCompoundsConcentration |
+| 0x13   | Temperature     | batteryPercentage, temperature                    |
+| 0x15   | ACC & GYRO      | acceleration, angularVelocity, batteryPercentage  |
+| 0x16   | Magnetometer    | batteryPercentage, magneticField                  |
+| 0x17   | Pressure        | batteryPercentage, pressure                       |
+| 0x18   | Vibration       | batteryPercentage, isMotionDetected               |
+| 0x19   | Photoresistance | batteryPercentage, luminousFlux                   |
+| 0x20   | Tamper          | batteryPercentage, isContactDetected              |
+| 0x21   | Leak Detection  | batteryPercentage, isLiquidDetected               |
+
+See the [reelyActive Developer's Cheatsheet](https://reelyactive.github.io/diy/cheatsheet/) for more details about the standard properties above which are considered to be dynamic ambient (dynamb) data.
 
 
 Contributing
