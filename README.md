@@ -61,6 +61,7 @@ The following services, in order of their assigned UUIDs, are supported by __adv
 | 0x2bd2       | NO2 Concentration             | gatt.js                     |
 | 0x2be4       | Noise                         | gatt.js                     |
 | 0x2be7       | VOC Concentration             | gatt.js                     |
+| 0xfcd2       | [BTHome](https://bthome.io/)  | bthome.js                   |
 | 0xfd6f       | Exposure Notification         | exposurenotification.js     |
 | 0xfd9f       | Hewlett Packard Enterprise    | hewlettpackardenterprise.js |
 | 0xfdaf       | Wiliot                        | wiliot.js                   |
