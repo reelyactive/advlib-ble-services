@@ -54,6 +54,7 @@ const INPUT_DATA_TEMPERATURE_45 = '40451101';
 const INPUT_DATA_VOLTAGE_4A = '404a020c';
 const INPUT_DATA_ENERGY_4D = '404d12138a14';
 const INPUT_DATA_ACCELERATION_51 = '40518756';
+const INPUT_DATA_ACCELERATION_51_XYZ = '40518756518756518756';
 const INPUT_DATA_GYROSCOPE = '40528756';
 const INPUT_DATA_TEXT = '40530c48656c6c6f20576f726c6421';
 const INPUT_DATA_RAW = '40540c48656c6c6f20576f726c6421';
@@ -203,7 +204,7 @@ const EXPECTED_DATA_HUMIDITY_2E = {
     uri: "https://sniffypedia.org/Service/BTHome/"
 };
 const EXPECTED_DATA_BUTTON = {
-    isButtonPressed: [ false, true, false, false, false, false, false ],
+    isButtonPressed: [ true ],
     uri: "https://sniffypedia.org/Service/BTHome/"
 };
 const EXPECTED_DATA_COUNT_3D = {
@@ -252,6 +253,10 @@ const EXPECTED_DATA_ENERGY_4D = {
 };
 const EXPECTED_DATA_ACCELERATION_51 = {
     acceleration: [ 2.258773383367409 ],
+    uri: "https://sniffypedia.org/Service/BTHome/"
+};
+const EXPECTED_DATA_ACCELERATION_51_XYZ = {
+    acceleration: [ 2.258773383367409, 2.258773383367409, 2.258773383367409 ],
     uri: "https://sniffypedia.org/Service/BTHome/"
 };
 const EXPECTED_DATA_GYROSCOPE = {
@@ -600,6 +605,12 @@ describe('bthome', function() {
   it('should handle valid acceleration (0x51) data as input', function() {
     assert.deepEqual(service.process(INPUT_DATA_ACCELERATION_51),
                      EXPECTED_DATA_ACCELERATION_51);
+  });
+
+  // Test the process function with valid acceleration (x, y, z) data
+  it('should handle valid xyz acceleration (0x51) data as input', function() {
+    assert.deepEqual(service.process(INPUT_DATA_ACCELERATION_51_XYZ),
+                     EXPECTED_DATA_ACCELERATION_51_XYZ);
   });
 
   // Test the process function with valid gyroscope data
