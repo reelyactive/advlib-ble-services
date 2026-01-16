@@ -18,6 +18,7 @@ const INPUT_DATA_HUMIDITY_03 = '4003bf13';
 const INPUT_DATA_PRESSURE = '4004138a01';
 const INPUT_DATA_ILLUMINANCE = '4005138a14';
 const INPUT_DATA_COUNT_09 = '400960';
+const INPUT_DATA_ENERGY_0A = '400a138a14';
 const INPUT_DATA_POWER_0B = '400b021b00';
 const INPUT_DATA_VOLTAGE_0C = '400c020c';
 const INPUT_DATA_PM_2_5 = '400d120c';
@@ -25,15 +26,18 @@ const INPUT_DATA_PM_10 = '400e021c';
 const INPUT_DATA_OPENING = '401100';
 const INPUT_DATA_CO2 = '4012e204';
 const INPUT_DATA_TVOC = '40133301';
+const INPUT_DATA_CARBON_MONOXIDE = '401700';
 const INPUT_DATA_DOOR = '401a00';
 const INPUT_DATA_GARAGE_DOOR = '401b00';
 const INPUT_DATA_GAS = '401c01';
+const INPUT_DATA_LIGHT = '401e01';
 const INPUT_DATA_MOISTURE = '402001';
 const INPUT_DATA_MOTION = '402100';
 const INPUT_DATA_MOVING = '402201';
 const INPUT_DATA_OCCUPANCY = '402301';
 const INPUT_DATA_PRESENCE = '402500';
 const INPUT_DATA_PROBLEM = '402601';
+const INPUT_DATA_SMOKE = '402901';
 const INPUT_DATA_VIBRATION = '402c01';
 const INPUT_DATA_WINDOW = '402d01';
 const INPUT_DATA_HUMIDITY_2E = '402e23';
@@ -48,8 +52,11 @@ const INPUT_DATA_CURRENT_43 = '40434e34';
 const INPUT_DATA_SPEED_44 = '40444e34';
 const INPUT_DATA_TEMPERATURE_45 = '40451101';
 const INPUT_DATA_VOLTAGE_4A = '404a020c';
+const INPUT_DATA_ENERGY_4D = '404d12138a14';
 const INPUT_DATA_ACCELERATION_51 = '40518756';
 const INPUT_DATA_GYROSCOPE = '40528756';
+const INPUT_DATA_TEXT = '40530c48656c6c6f20576f726c6421';
+const INPUT_DATA_RAW = '40540c48656c6c6f20576f726c6421';
 const INPUT_DATA_TEMPERATURE_57 = '4057ea';
 const INPUT_DATA_TEMPERATURE_58 = '4058ea';
 const INPUT_DATA_COUNT_59 = '4059ea';
@@ -61,6 +68,10 @@ const INPUT_DATA_DIRECTION = '405e9f8c';
 const INPUT_DATA_ROTATIONAL_SPEED = '4061ac0d';
 const INPUT_DATA_SPEED_62 = '40624099dfff';
 const INPUT_DATA_ACCELERATION_63 = '40630057d0ff';
+const INPUT_DATA_DEVICE_TYPE_ID = '40f00100';
+const INPUT_DATA_FIRMWARE_F1 = '40f100010204';
+const INPUT_DATA_FIRMWARE_F2 = '40f2000106';
+const INPUT_DATA_TEMPERATURES = '4002ca0945110157ea58ea';
 const INPUT_DATA_ENCRYPTED = '41e445f3c9962b332211006c7c4519';
 
 
@@ -99,6 +110,10 @@ const EXPECTED_DATA_COUNT_09 = {
     count: 96,
     uri: "https://sniffypedia.org/Service/BTHome/"
 };
+const EXPECTED_DATA_ENERGY_0A = {
+    energy: 1346.067,
+    uri: "https://sniffypedia.org/Service/BTHome/"
+};
 const EXPECTED_DATA_POWER_0B = {
     power: 69.14,
     uri: "https://sniffypedia.org/Service/BTHome/"
@@ -127,6 +142,10 @@ const EXPECTED_DATA_TVOC = {
     volatileOrganicCompoundsConcentration: Math.round(307 / 4.5),
     uri: "https://sniffypedia.org/Service/BTHome/"
 };
+const EXPECTED_DATA_CARBON_MONOXIDE = {
+    isCarbonMonoxideDetected: [ false ],
+    uri: "https://sniffypedia.org/Service/BTHome/"
+};
 const EXPECTED_DATA_DOOR = {
     isContactDetected: [ true ],
     uri: "https://sniffypedia.org/Service/BTHome/"
@@ -137,6 +156,10 @@ const EXPECTED_DATA_GARAGE_DOOR = {
 };
 const EXPECTED_DATA_GAS = {
     isGasDetected: [ true ],
+    uri: "https://sniffypedia.org/Service/BTHome/"
+};
+const EXPECTED_DATA_LIGHT = {
+    isLightDetected: [ true ],
     uri: "https://sniffypedia.org/Service/BTHome/"
 };
 const EXPECTED_DATA_MOISTURE = {
@@ -161,6 +184,10 @@ const EXPECTED_DATA_PRESENCE = {
 };
 const EXPECTED_DATA_PROBLEM = {
     isHealthy: false,
+    uri: "https://sniffypedia.org/Service/BTHome/"
+};
+const EXPECTED_DATA_SMOKE = {
+    isSmokeDetected: [ true ],
     uri: "https://sniffypedia.org/Service/BTHome/"
 };
 const EXPECTED_DATA_VIBRATION = {
@@ -219,12 +246,24 @@ const EXPECTED_DATA_VOLTAGE_4A = {
     voltage: 307.4,
     uri: "https://sniffypedia.org/Service/BTHome/"
 };
+const EXPECTED_DATA_ENERGY_4D = {
+    energy: 344593.170,
+    uri: "https://sniffypedia.org/Service/BTHome/"
+};
 const EXPECTED_DATA_ACCELERATION_51 = {
     acceleration: [ 2.258773383367409 ],
     uri: "https://sniffypedia.org/Service/BTHome/"
 };
 const EXPECTED_DATA_GYROSCOPE = {
     angularVelocity: 22.151,
+    uri: "https://sniffypedia.org/Service/BTHome/"
+};
+const EXPECTED_DATA_TEXT = {
+    text: "Hello World!",
+    uri: "https://sniffypedia.org/Service/BTHome/"
+};
+const EXPECTED_DATA_RAW = {
+    raw: "48656c6c6f20576f726c6421",
     uri: "https://sniffypedia.org/Service/BTHome/"
 };
 const EXPECTED_DATA_TEMPERATURE_57 = {
@@ -269,6 +308,22 @@ const EXPECTED_DATA_SPEED_62 = {
 };
 const EXPECTED_DATA_ACCELERATION_63 = {
     acceleration: [ -3.123456 ],
+    uri: "https://sniffypedia.org/Service/BTHome/"
+};
+const EXPECTED_DATA_DEVICE_TYPE_ID = {
+    deviceType: "1",
+    uri: "https://sniffypedia.org/Service/BTHome/"
+};
+const EXPECTED_DATA_FIRMWARE_F1 = {
+    firmwareVersion: "4.2.1.0",
+    uri: "https://sniffypedia.org/Service/BTHome/"
+};
+const EXPECTED_DATA_FIRMWARE_F2 = {
+    firmwareVersion: "6.1.0",
+    uri: "https://sniffypedia.org/Service/BTHome/"
+};
+const EXPECTED_DATA_TEMPERATURES = {
+    temperatures: [ 25.06, 27.3, -22, -7.699999999999999 ],
     uri: "https://sniffypedia.org/Service/BTHome/"
 };
 const EXPECTED_DATA_ENCRYPTED = {
@@ -342,6 +397,12 @@ describe('bthome', function() {
                      EXPECTED_DATA_COUNT_09);
   });
 
+  // Test the process function with valid energy data
+  it('should handle valid energy (0x0a) data as input', function() {
+    assert.deepEqual(service.process(INPUT_DATA_ENERGY_0A),
+                     EXPECTED_DATA_ENERGY_0A);
+  });
+
   // Test the process function with valid power data
   it('should handle valid power (0x0b) data as input', function() {
     assert.deepEqual(service.process(INPUT_DATA_POWER_0B),
@@ -381,6 +442,12 @@ describe('bthome', function() {
                      EXPECTED_DATA_TVOC);
   });
 
+  // Test the process function with valid carbon monoxide data
+  it('should handle valid carbon monoxide data as input', function() {
+    assert.deepEqual(service.process(INPUT_DATA_CARBON_MONOXIDE),
+                     EXPECTED_DATA_CARBON_MONOXIDE);
+  });
+
   // Test the process function with valid door data
   it('should handle valid door data as input', function() {
     assert.deepEqual(service.process(INPUT_DATA_DOOR), EXPECTED_DATA_DOOR);
@@ -395,6 +462,11 @@ describe('bthome', function() {
   // Test the process function with valid gas data
   it('should handle valid gas data as input', function() {
     assert.deepEqual(service.process(INPUT_DATA_GAS), EXPECTED_DATA_GAS);
+  });
+
+  // Test the process function with valid light data
+  it('should handle valid light data as input', function() {
+    assert.deepEqual(service.process(INPUT_DATA_LIGHT), EXPECTED_DATA_LIGHT);
   });
 
   // Test the process function with valid moisture data
@@ -429,6 +501,11 @@ describe('bthome', function() {
   it('should handle valid problem data as input', function() {
     assert.deepEqual(service.process(INPUT_DATA_PROBLEM),
                                      EXPECTED_DATA_PROBLEM);
+  });
+
+  // Test the process function with valid smoke data
+  it('should handle valid smoke data as input', function() {
+    assert.deepEqual(service.process(INPUT_DATA_SMOKE), EXPECTED_DATA_SMOKE);
   });
 
   // Test the process function with valid vibration data
@@ -513,6 +590,12 @@ describe('bthome', function() {
                      EXPECTED_DATA_VOLTAGE_4A);
   });
 
+  // Test the process function with valid energy data
+  it('should handle valid energy (0x4d) data as input', function() {
+    assert.deepEqual(service.process(INPUT_DATA_ENERGY_4D),
+                     EXPECTED_DATA_ENERGY_4D);
+  });
+
   // Test the process function with valid acceleration data
   it('should handle valid acceleration (0x51) data as input', function() {
     assert.deepEqual(service.process(INPUT_DATA_ACCELERATION_51),
@@ -523,6 +606,18 @@ describe('bthome', function() {
   it('should handle valid gyroscope data as input', function() {
     assert.deepEqual(service.process(INPUT_DATA_GYROSCOPE),
                      EXPECTED_DATA_GYROSCOPE);
+  });
+
+  // Test the process function with valid text data
+  it('should handle valid text data as input', function() {
+    assert.deepEqual(service.process(INPUT_DATA_TEXT),
+                     EXPECTED_DATA_TEXT);
+  });
+
+  // Test the process function with valid raw data
+  it('should handle valid raw data as input', function() {
+    assert.deepEqual(service.process(INPUT_DATA_RAW),
+                     EXPECTED_DATA_RAW);
   });
 
   // Test the process function with valid temperature data
@@ -589,6 +684,30 @@ describe('bthome', function() {
   it('should handle valid acceleration (0x63) data as input', function() {
     assert.deepEqual(service.process(INPUT_DATA_ACCELERATION_63),
                      EXPECTED_DATA_ACCELERATION_63);
+  });
+
+  // Test the process function with valid device type id data
+  it('should handle valid device type id data as input', function() {
+    assert.deepEqual(service.process(INPUT_DATA_DEVICE_TYPE_ID),
+                     EXPECTED_DATA_DEVICE_TYPE_ID);
+  });
+
+  // Test the process function with valid firmware data
+  it('should handle valid firmware (0xf1) data as input', function() {
+    assert.deepEqual(service.process(INPUT_DATA_FIRMWARE_F1),
+                     EXPECTED_DATA_FIRMWARE_F1);
+  });
+
+  // Test the process function with valid firmware data
+  it('should handle valid firmware (0xf2) data as input', function() {
+    assert.deepEqual(service.process(INPUT_DATA_FIRMWARE_F2),
+                     EXPECTED_DATA_FIRMWARE_F2);
+  });
+
+  // Test the process function with valid temperatures data
+  it('should handle valid temperatures data as input', function() {
+    assert.deepEqual(service.process(INPUT_DATA_TEMPERATURES),
+                     EXPECTED_DATA_TEMPERATURES);
   });
 
   // Test the process function with valid encrypted data
