@@ -61,6 +61,7 @@ const INPUT_DATA_DIRECTION = '405e9f8c';
 const INPUT_DATA_ROTATIONAL_SPEED = '4061ac0d';
 const INPUT_DATA_SPEED_62 = '40624099dfff';
 const INPUT_DATA_ACCELERATION_63 = '40630057d0ff';
+const INPUT_DATA_ENCRYPTED = '41e445f3c9962b332211006c7c4519';
 
 
 // Expected outputs for the scenario
@@ -268,6 +269,13 @@ const EXPECTED_DATA_SPEED_62 = {
 };
 const EXPECTED_DATA_ACCELERATION_63 = {
     acceleration: [ -3.123456 ],
+    uri: "https://sniffypedia.org/Service/BTHome/"
+};
+const EXPECTED_DATA_ENCRYPTED = {
+    encrypted: { data: "e445f3c9962b",
+                 salt: 1122867,
+                 checksum: 423984236,
+                 method: "bthome-v2" },
     uri: "https://sniffypedia.org/Service/BTHome/"
 };
 
@@ -581,6 +589,12 @@ describe('bthome', function() {
   it('should handle valid acceleration (0x63) data as input', function() {
     assert.deepEqual(service.process(INPUT_DATA_ACCELERATION_63),
                      EXPECTED_DATA_ACCELERATION_63);
+  });
+
+  // Test the process function with valid encrypted data
+  it('should handle valid encrypted data as input', function() {
+    assert.deepEqual(service.process(INPUT_DATA_ENCRYPTED),
+                     EXPECTED_DATA_ENCRYPTED);
   });
 
 });
