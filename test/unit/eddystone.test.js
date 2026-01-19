@@ -14,6 +14,7 @@ const INPUT_DATA_EDDYSTONE_UID = '00fc00112233445566778899aabbccddeeff0000';
 const INPUT_DATA_EDDYSTONE_URL = '10000367657470617265746f07';
 const INPUT_DATA_EDDYSTONE_TLM = '20000bb815000000004500000258';
 const INPUT_DATA_EDDYSTONE_ETLM = '2001112233445566778899aabbcc5a17c4ec';
+const INPUT_DATA_EDDYSTONE_EID = '30fc0011223344556677';
 
 
 // Expected outputs for the scenario
@@ -37,6 +38,10 @@ const EXPECTED_DATA_EDDYSTONE_ETLM = {
                  salt: 23063,
                  checksum: 50412,
                  method: "eddystone-etlm" }
+};
+const EXPECTED_DATA_EDDYSTONE_EID = {
+    txPower: -4,
+    deviceIds: [ "0011223344556677/0" ]
 };
 
 
@@ -76,6 +81,12 @@ describe('eddystone', function() {
   it('should handle valid Eddystone-ETLM data as input', function() {
     assert.deepEqual(service.process(INPUT_DATA_EDDYSTONE_ETLM),
                      EXPECTED_DATA_EDDYSTONE_ETLM);
+  });
+
+  // Test the process function with valid Eddystone EID data
+  it('should handle valid Eddystone-EID data as input', function() {
+    assert.deepEqual(service.process(INPUT_DATA_EDDYSTONE_EID),
+                     EXPECTED_DATA_EDDYSTONE_EID);
   });
 
 });
