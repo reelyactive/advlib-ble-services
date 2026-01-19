@@ -1,5 +1,5 @@
 /**
- * Copyright reelyActive 2015-2020
+ * Copyright reelyActive 2015-2026
  * We believe in an open Internet of Things
  */
 
@@ -13,6 +13,7 @@ const INPUT_DATA_INVALID_INPUT = 'ff';
 const INPUT_DATA_EDDYSTONE_UID = '00fc00112233445566778899aabbccddeeff0000';
 const INPUT_DATA_EDDYSTONE_URL = '10000367657470617265746f07';
 const INPUT_DATA_EDDYSTONE_TLM = '20000bb815000000004500000258';
+const INPUT_DATA_EDDYSTONE_ETLM = '2001112233445566778899aabbcc5a17c4ec';
 
 
 // Expected outputs for the scenario
@@ -30,6 +31,12 @@ const EXPECTED_DATA_EDDYSTONE_TLM = {
     temperature: 21.0,
     txCount: 69,
     uptime: 60000
+};
+const EXPECTED_DATA_EDDYSTONE_ETLM = {
+    encrypted: { data: "112233445566778899aabbcc",
+                 salt: 23063,
+                 checksum: 50412,
+                 method: "eddystone-etlm" }
 };
 
 
@@ -63,6 +70,12 @@ describe('eddystone', function() {
   it('should handle valid Eddystone-TLM data as input', function() {
     assert.deepEqual(service.process(INPUT_DATA_EDDYSTONE_TLM),
                      EXPECTED_DATA_EDDYSTONE_TLM);
+  });
+
+  // Test the process function with valid Eddystone ETLM data
+  it('should handle valid Eddystone-ETLM data as input', function() {
+    assert.deepEqual(service.process(INPUT_DATA_EDDYSTONE_ETLM),
+                     EXPECTED_DATA_EDDYSTONE_ETLM);
   });
 
 });
