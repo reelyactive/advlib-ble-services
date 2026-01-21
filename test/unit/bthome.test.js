@@ -38,6 +38,7 @@ const INPUT_DATA_OCCUPANCY = '402301';
 const INPUT_DATA_PRESENCE = '402500';
 const INPUT_DATA_PROBLEM = '402601';
 const INPUT_DATA_SMOKE = '402901';
+const INPUT_DATA_TAMPER = '402b00';
 const INPUT_DATA_VIBRATION = '402c01';
 const INPUT_DATA_WINDOW = '402d01';
 const INPUT_DATA_HUMIDITY_2E = '402e23';
@@ -189,6 +190,10 @@ const EXPECTED_DATA_PROBLEM = {
 };
 const EXPECTED_DATA_SMOKE = {
     isSmokeDetected: [ true ],
+    uri: "https://sniffypedia.org/Service/BTHome/"
+};
+const EXPECTED_DATA_TAMPER = {
+    isTamperDetected: [ false ],
     uri: "https://sniffypedia.org/Service/BTHome/"
 };
 const EXPECTED_DATA_VIBRATION = {
@@ -511,6 +516,11 @@ describe('bthome', function() {
   // Test the process function with valid smoke data
   it('should handle valid smoke data as input', function() {
     assert.deepEqual(service.process(INPUT_DATA_SMOKE), EXPECTED_DATA_SMOKE);
+  });
+
+  // Test the process function with valid tamper data
+  it('should handle valid tamper data as input', function() {
+    assert.deepEqual(service.process(INPUT_DATA_TAMPER), EXPECTED_DATA_TAMPER);
   });
 
   // Test the process function with valid vibration data
