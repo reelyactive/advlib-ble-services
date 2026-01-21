@@ -233,7 +233,7 @@ const EXPECTED_DATA_DISTANCE_41 = {
     uri: "https://sniffypedia.org/Service/BTHome/"
 };
 const EXPECTED_DATA_DURATION = {
-    duration: 13.390,
+    duration: 13390,
     uri: "https://sniffypedia.org/Service/BTHome/"
 };
 const EXPECTED_DATA_CURRENT_43 = {
