@@ -15,7 +15,7 @@
     "payload processor",
     "library"
   ],
-  "version": "1.8.3",
+  "version": "1.8.4",
   "engines": {
     "node": ">=6.0.0"
   },
