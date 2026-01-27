@@ -1,5 +1,5 @@
 /**
- * Copyright reelyActive 2015-2025
+ * Copyright reelyActive 2015-2026
  * We believe in an open Internet of Things
  */
 
@@ -38,7 +38,7 @@ const EXPECTED_DATA_TEMPERATURE_HUMIDITY = {
 };
 const EXPECTED_DATA_VISIBLE_LIGHT = {
     batteryPercentage: 69,
-    isContactDetected: [ false ],
+    isLightDetected: [ true ],
     uri: "https://sniffypedia.org/Organization/Shenzhen_Minew_Technologies_Co_Ltd/"
 };
 const EXPECTED_DATA_ACCELERATION = {
@@ -101,7 +101,7 @@ const EXPECTED_DATA_PHOTORESISTANCE = {
 };
 const EXPECTED_DATA_TAMPER = {
     batteryPercentage: 69,
-    isContactDetected: [ false ],
+    isTamperDetected: [ true ],
     uri: "https://sniffypedia.org/Organization/Shenzhen_Minew_Technologies_Co_Ltd/"
 };
 const EXPECTED_DATA_WATER_DETECTION = {
