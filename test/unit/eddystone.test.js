@@ -15,6 +15,7 @@ const INPUT_DATA_EDDYSTONE_URL = '10000367657470617265746f07';
 const INPUT_DATA_EDDYSTONE_TLM = '20000bb815000000004500000258';
 const INPUT_DATA_EDDYSTONE_ETLM = '2001112233445566778899aabbcc5a17c4ec';
 const INPUT_DATA_EDDYSTONE_EID = '30fc0011223344556677';
+const INPUT_DATA_FIND_HUB = '411b0d83b421ea92034602c6b21119d5b626a3ce4bb0';
 
 
 // Expected outputs for the scenario
@@ -42,6 +43,9 @@ const EXPECTED_DATA_EDDYSTONE_ETLM = {
 const EXPECTED_DATA_EDDYSTONE_EID = {
     txPower: -4,
     deviceIds: [ "0011223344556677/0" ]
+};
+const EXPECTED_DATA_FIND_HUB = {
+    uri: "https://sniffypedia.org/Service/Find_Hub/"
 };
 
 
@@ -87,6 +91,12 @@ describe('eddystone', function() {
   it('should handle valid Eddystone-EID data as input', function() {
     assert.deepEqual(service.process(INPUT_DATA_EDDYSTONE_EID),
                      EXPECTED_DATA_EDDYSTONE_EID);
+  });
+
+  // Test the process function with valid Find Hub data
+  it('should handle valid Find Hub data as input', function() {
+    assert.deepEqual(service.process(INPUT_DATA_FIND_HUB),
+                     EXPECTED_DATA_FIND_HUB);
   });
 
 });

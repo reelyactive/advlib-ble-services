@@ -80,6 +80,7 @@ The following is a _non-exhaustive_ list of devices supported by __advlib-ble-se
 |:-------------|:-------------------------|:-------------------------|
 | Various      | Heart rate monitor       | gatt.js                  |
 | Various      | Eddystone beacon         | eddystone.js             |
+| Various      | Android (Find Hub)       | eddystone.js             |
 | Various      | Android phone (contact tracing) | exposurenotification.js  |
 | Apple        | iPhone (contact tracing) | exposurenotification.js  |
 | Wiliot       | Pixel                    | wiliot.js                |
